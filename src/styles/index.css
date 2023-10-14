@@ -11,7 +11,6 @@ body,
 .container {
   height: 100%;
   width: 100%;
-  /* font-family: "Outfit", sans-serif; */
 }
 
 .app {
@@ -19,7 +18,6 @@ body,
   position: relative;
 }
 
-.active {
-  background-color: "#13395e";
-  color: "red";
+li.ps-active {
+  background-color: #f5f5f5;
 }
