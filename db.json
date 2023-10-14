@@ -3,8 +3,202 @@
     {
       "id": 1,
       "name": "Fido",
+      "owner": "Brenda Fitzpatrick",
       "breed": "Labrador",
-      "age": 5
+      "age": 5,
+      "gender": "male",
+      "bio": "Fido is an energetic Labrador who loves long walks in the park and playing fetch. He enjoys the outdoors and is always up for a game of catch!",
+      "image": "https://images.unsplash.com/photo-1494434546761-dbaf3c72feea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 2,
+      "name": "Bella",
+      "owner": "John Smith",
+      "breed": "Golden Retriever",
+      "age": 3,
+      "gender": "female",
+      "bio": "Bella is a playful Golden Retriever who adores swimming and chasing after frisbees. She's a water-loving pup and can spend hours at the beach!",
+      "image": "https://images.unsplash.com/photo-1609075797584-c766367e5fc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
+    },
+    {
+      "id": 3,
+      "name": "Max",
+      "owner": "Sarah Johnson",
+      "breed": "Poodle",
+      "age": 7,
+      "gender": "male",
+      "bio": "Max is a sophisticated Poodle who enjoys leisurely strolls in the park and appreciates a good pampering session. He's a fan of grooming and looking his best!",
+      "image": "https://images.unsplash.com/photo-1546421845-6471bdcf3edf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Luna",
+      "owner": "Carlos Rodriguez",
+      "breed": "Siberian Husky",
+      "age": 2,
+      "gender": "female",
+      "bio": "Luna is an adventurous Siberian Husky who loves going on hikes and exploring the great outdoors. She's a high-energy pup who's always up for an adventure!",
+      "image": "https://images.unsplash.com/photo-1664527595692-c5a6b7d5be67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 5,
+      "name": "Rocky",
+      "owner": "Karen Thompson",
+      "breed": "German Shepherd",
+      "age": 4,
+      "gender": "male",
+      "bio": "Rocky is a loyal and intelligent German Shepherd who enjoys obedience training and learning new tricks. He's a quick learner and thrives on mental stimulation!",
+      "image": "https://images.unsplash.com/photo-1568274604780-30c1bcacb31a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 6,
+      "name": "Coco",
+      "owner": "Michelle Brown",
+      "breed": "French Bulldog",
+      "age": 1,
+      "gender": "female",
+      "bio": "Coco is a playful French Bulldog with a love for playdates and cuddles. She's a social butterfly who enjoys making new friends at the dog park!",
+      "image": "https://images.unsplash.com/photo-1603123853880-a92fafb7809f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+    },
+    {
+      "id": 7,
+      "name": "Maximus",
+      "owner": "Daniel Martinez",
+      "breed": "Rottweiler",
+      "age": 6,
+      "gender": "male",
+      "bio": "Maximus is a strong and protective Rottweiler who enjoys guarding the yard and going for long runs. He's a loyal companion and takes his role as protector seriously!",
+      "image": "https://images.unsplash.com/photo-1605638868237-0660a05a135b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 8,
+      "name": "Daisy",
+      "owner": "Jennifer Kim",
+      "breed": "Beagle",
+      "age": 9,
+      "gender": "female",
+      "bio": "Daisy is a curious Beagle with a nose for adventure. She loves sniffing around and exploring new scents during her daily walks!",
+      "image": "https://images.unsplash.com/photo-1622535078397-0c81cc7eae14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 9,
+      "name": "Leo",
+      "owner": "Robert Turner",
+      "breed": "Chihuahua",
+      "age": 11,
+      "gender": "male",
+      "bio": "Leo is a charming Chihuahua who enjoys lounging around and taking afternoon naps. He's a snuggler and loves to curl up with his favorite plush toy!",
+      "image": "https://images.unsplash.com/photo-1617218326259-2a338a730d1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1905&q=80"
+    },
+    {
+      "id": 10,
+      "name": "Lola",
+      "owner": "Maria Hernandez",
+      "breed": "Bulldog",
+      "age": 4,
+      "gender": "female",
+      "bio": "Lola is a gentle and affectionate Bulldog who adores belly rubs and leisurely strolls around the neighborhood. She's a true sweetheart!",
+      "image": "https://images.unsplash.com/photo-1681687401313-06574ffe9b22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 11,
+      "name": "Charlie",
+      "owner": "Kevin Wilson",
+      "breed": "Cavalier King Charles Spaniel",
+      "age": 5,
+      "gender": "male",
+      "bio": "Charlie is a cheerful and sociable Cavalier King Charles Spaniel who loves meeting new friends at the dog park. He's always up for a game of fetch!",
+      "image": "https://images.unsplash.com/photo-1613210581288-ae09b0bdf17f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 12,
+      "name": "Bentley",
+      "owner": "Emily Davis",
+      "breed": "Shih Tzu",
+      "age": 6,
+      "gender": "male",
+      "bio": "Bentley is a laid-back Shih Tzu who enjoys lounging on the couch and getting pampered with spa days. He's a true lap dog and loves to be spoiled!",
+      "image": "https://images.unsplash.com/photo-1437957146754-f6377debe171?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80"
+    },
+    {
+      "id": 13,
+      "name": "Mia",
+      "owner": "Laura Rodriguez",
+      "breed": "Pug",
+      "age": 2,
+      "gender": "female",
+      "bio": "Mia is an adorable Pug with a love for playtime and snuggles. She's always up for a game of chase or curling up on the sofa for a cozy nap!",
+      "image": "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1917&q=80"
+    },
+    {
+      "id": 14,
+      "name": "Riley",
+      "owner": "Alexandra Lee",
+      "breed": "Border Collie",
+      "age": 4,
+      "gender": "female",
+      "bio": "Riley is a highly intelligent Border Collie who loves agility training and learning new tricks. She's a quick learner and thrives on mental stimulation.",
+      "image": "https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1886&q=80"
+    },
+    {
+      "id": 15,
+      "name": "Cooper",
+      "owner": "Michael Davis",
+      "breed": "Labrador Retriever",
+      "age": 3,
+      "gender": "male",
+      "bio": "Cooper is a playful and outgoing Labrador Retriever who adores fetch and swimming. He has a knack for finding sticks on his walks, making him an excellent branch manager!",
+      "image": "https://images.unsplash.com/photo-1514984879728-be0aff75a6e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1984&q=80"
+    },
+    {
+      "id": 16,
+      "name": "Zoe",
+      "owner": "Melissa Johnson",
+      "breed": "Cocker Spaniel",
+      "age": 8,
+      "gender": "female",
+      "bio": "Zoe is a sweet-natured Cocker Spaniel who loves gentle walks and cuddling. She has a soft spot for apple slices as snacks but strongly dislikes bathtime!",
+      "image": "https://images.unsplash.com/photo-1580768581776-6e6eefd20b53?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
+    },
+    {
+      "id": 17,
+      "name": "Oliver",
+      "owner": "Christopher Thompson",
+      "breed": "Shiba Inu",
+      "age": 2,
+      "gender": "male",
+      "bio": "Oliver is an independent Shiba Inu who loves going on adventures. He gets excited for car rides and is always on the lookout for squirrels during playtime in the park!",
+      "image": "https://images.unsplash.com/photo-1618911392289-cd9dd8890860?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1885&q=80"
+    },
+    {
+      "id": 18,
+      "name": "Lucy",
+      "owner": "Jessica Smith",
+      "breed": "Dalmatian",
+      "age": 6,
+      "gender": "female",
+      "bio": "Lucy is an active Dalmatian who thrives on long runs and outdoor adventures. She's a fan of cheese cubes as snacks but prefers to skip bathtime if she can!",
+      "image": "https://images.unsplash.com/photo-1625481725655-bfe65d0b2f8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80"
+    },
+    {
+      "id": 19,
+      "name": "Max",
+      "owner": "Richard Martinez",
+      "breed": "Pomeranian",
+      "age": 7,
+      "gender": "male",
+      "bio": "Max is a fluffy Pomeranian who enjoys short walks and cozy snuggles. He has a fondness for small apple slices as snacks and doesn't particularly enjoy the vet!",
+      "image": "https://images.unsplash.com/photo-1555231458-22288111e347?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 20,
+      "name": "Lily",
+      "owner": "Amanda Turner",
+      "breed": "Bichon Frise",
+      "age": 4,
+      "gender": "female",
+      "bio": "Lily is a cheerful Bichon Frise who loves meeting new friends and playing in the park. She enjoys yogurt drops as snacks, but isn't a fan of the mailman!",
+      "image": "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     }
   ]
 }
