@@ -16,3 +16,9 @@ img{
   justify-content: center;
   text-align: center;
 }
+.dogPage{
+  place-content: center;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+}
