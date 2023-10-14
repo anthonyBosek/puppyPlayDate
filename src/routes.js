@@ -32,6 +32,10 @@ const routes = [
         path: "/dogs/:id",
         element: <ViewOne />,
       },
+      {
+        path: "/profile/:id",
+        element: <ViewOne />,
+      },
     ],
   },
 ];

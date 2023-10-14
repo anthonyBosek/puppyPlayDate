@@ -1,20 +1,9 @@
 import { useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
-import { Link } from "react-router-dom";
 import { GrHome } from "react-icons/gr";
-import { FaDog, FaHome, FaRegUser } from "react-icons/fa6";
+import { FaDog, FaRegUser } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
-
-const Item = ({ title, to, icon, selected, setSelected }) => (
-  <MenuItem
-    icon={icon}
-    active={selected === title}
-    onClick={() => setSelected(title)}
-    component={<Link to={to} />}
-  >
-    {title}
-  </MenuItem>
-);
+import Item from "./NavItem";
 
 const SideNav = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -45,7 +34,7 @@ const SideNav = () => {
         />
         <Item
           title="My Profile"
-          to="/profile"
+          to="/profile/2"
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}

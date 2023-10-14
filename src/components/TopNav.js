@@ -2,13 +2,14 @@ import { BsSun, BsMoon } from "react-icons/bs";
 
 import Search from "./Search";
 
-const TopNav = () => {
+const TopNav = ({ isDark, toggleDarkMode }) => {
   return (
-    <nav>
+    <nav className="top-nav">
       <div className="links">
-        <BsSun />
-        <BsMoon />
         <Search />
+        <span onClick={toggleDarkMode} className="icon">
+          {isDark ? <BsSun /> : <BsMoon />}
+        </span>
       </div>
     </nav>
   );
