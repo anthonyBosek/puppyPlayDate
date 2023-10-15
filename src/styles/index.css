@@ -78,3 +78,15 @@ img{
   justify-content: center;
   text-align: center;
 }
+
+/* Kat */
+:root {
+  --light-grey: #dae3e5;
+  --dark-grey: #393d3f;
+  --light-blue: #53d8fb;
+  --med-blue: #0a71d8;
+  /* --blue-grad: linear-gradient(to top, var(--light-blue), var(--med-blue)); */
+  --yellow: #f7bd15;
+  --orange: #f55d3e;
+  /* --yell-grad: linear-gradient(to top, var(--yellow), var(--orange)); */
+}
