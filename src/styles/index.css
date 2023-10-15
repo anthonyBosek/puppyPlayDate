@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* anthony */
 html,
 body,
 #root,
@@ -57,4 +58,23 @@ li.ps-active {
   background-color: transparent;
   cursor: pointer;
   outline: none;
+}
+/* Danner */
+img{
+  max-width: 250px;
+  max-height: 250px;
+  min-width: 200px;
+  min-height: 200px;
+}
+.all-cards{
+  place-content: center;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.dogPage{
+  place-content: center;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
 }

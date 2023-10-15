@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 const ViewOne = () => {
+  //use state of "" so no loading errors for name not existing
+  const [dog, setDog] = useState({name:""}); 
+
+  useEffect(()=>{
+    fetch(`http://localhost:3005/dogs/${id}`)
+    .then(resp => resp.json())
+    .then(setDog)
+  },[])
+  
+
   const { id } = useParams();
   const [dog, setDog] = useState({});
 
