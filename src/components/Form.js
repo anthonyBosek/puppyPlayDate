@@ -1,24 +1,57 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Form = () => {
-  const initialValue = {
-    owner: "",
-    name: "",
-    breed: "",
-    age: "",
-    gender: "",
-    image: "",
-    bio: ""
-  }
+const URL = "http://localhost:3005/dogs"
+const initialValue = {
+  owner: "",
+  name: "",
+  breed: "",
+  age: "",
+  gender: "",
+  image: "",
+  bio: ""
+}
+
+const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
   const[formData, setFormData] = useState(initialValue)
 
   const handleChange = (e) => {
-    console.log(e.target.value)
     setFormData({...formData, [e.target.name]: e.target.value})
   }
 
+  useEffect(() => {
+    if (selectedDogId) {
+      fetch(`${URL}/${selectedDogId}`)
+      .then(resp => resp.json())
+      .then(setFormData)
+      .catch(err => alert(err))
+    }
+  }, [selectedDogId])
+
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    const url = `${URL}/${selectedDogId || ""}`
+    const method = selectedDogId ? "PATCH" : "POST"
+
+    fetch(url, {
+      method,
+      headers: {
+        "Content-Type": "application/json" 
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(resp => resp.json())
+    .then(dogData => {
+      if(selectedDogId) {
+        console.log(dogData)
+        // onEditDog(dogData)
+      } else {
+        console.log(dogData)
+        // onAddDog(dogData)
+      }
+      setFormData(initialValue)
+    })
+    .catch(err => alert(err))
   }
   
   return (
