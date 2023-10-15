@@ -46,8 +46,8 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
         console.log(dogData)
         // onEditDog(dogData)
       } else {
-        console.log(dogData)
-        // onAddDog(dogData)
+        // console.log(dogData)
+        onAddDog(dogData)
       }
       setFormData(initialValue)
     })

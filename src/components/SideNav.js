@@ -5,7 +5,7 @@ import { FaDog, FaRegUser } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 import Item from "./NavItem";
 
-const SideNav = () => {
+const SideNav = ({currentDog}) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Home");
 
@@ -34,7 +34,7 @@ const SideNav = () => {
         />
         <Item
           title="My Profile"
-          to="/profile/2"
+          to={`/profile/${currentDog.id}`}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}
