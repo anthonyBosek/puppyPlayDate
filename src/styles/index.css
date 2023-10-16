@@ -82,13 +82,6 @@ li.ps-active {
   object-fit: cover;
 }
 
-/* .dogPage {
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
-  gap: 2rem;
-  padding: 2rem;
-  align-items: center;
-} */
 .dogPage div {
   width: 300px;
 }
@@ -109,7 +102,6 @@ li.ps-active {
   --yellow: #f7bd15;
   --yellow-lt: #f9d15b;
   --orange: #f55d3e;
-  /* --yell-grad: linear-gradient(to top, var(--yellow), var(--orange)); */
 }
 
 #home {
@@ -154,6 +146,10 @@ h3 {
 p {
   margin: 1rem;
 }
+.bold {
+  font-weight: bolder;
+  margin-bottom: 0;
+}
 
 .bg-yellow {
   background-color: var(--yellow);
@@ -165,7 +161,7 @@ p {
 .bg-blue {
   background-color: var(--med-blue);
 }
-.bg-blue:hover {
+button .bg-blue:hover {
   background-color: var(--med-blue-lt);
 }
 
@@ -185,5 +181,7 @@ button:hover {
 }
 .btn-large {
   padding: 1rem 4rem;
+}
+.larger-text {
   font-size: 1.25rem;
 }
