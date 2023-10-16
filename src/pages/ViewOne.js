@@ -5,9 +5,10 @@ import { FaBone, FaTimes } from "react-icons/fa";
 
 const ViewOne = () => {
   const { id } = useParams();
-  const [dog, setDog] = useState({});
-  const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
   const navigate = useNavigate();
+  const [dog, setDog] = useState({});
+
+  const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
 
   useEffect(() => {
     const getDogData = () => {
@@ -36,22 +37,27 @@ const ViewOne = () => {
           About: <br /> {dog.bio}
         </p>
         <p>Owner: {dog.owner}</p>
-        {userDog.id === dog.id ? 
+        {userDog.id === dog.id ? (
           <>
-            <button className="btn-small bg-yellow larger-text">Delete</button> 
+            <button className="btn-small bg-yellow larger-text">Delete</button>
             <Link to={`/edit/${id}`}>
               <button className="btn-small bg-blue larger-text">Edit</button>
             </Link>
-          </> : 
+          </>
+        ) : (
           <>
             <Link>
-              <button className="btn-small bg-yellow larger-text"><FaTimes /></button>
+              <button className="btn-small bg-yellow larger-text">
+                <FaTimes />
+              </button>
             </Link>
             <Link>
-              <button className="btn-small bg-blue larger-text"><FaBone /></button> 
+              <button className="btn-small bg-blue larger-text">
+                <FaBone />
+              </button>
             </Link>
           </>
-        }
+        )}
       </div>
     </div>
   ) : (

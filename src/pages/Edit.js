@@ -23,7 +23,7 @@ const Edit = () => {
   return (
     <div>
       {console.log(selectDog)}
-      <h1>Edit</h1>
+      <h1>Edit User Data</h1>
       <Form selectedDogId={selectDog.id} onEditDog={onEditDog} />
     </div>
   );
