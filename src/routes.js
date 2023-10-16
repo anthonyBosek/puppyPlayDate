@@ -5,7 +5,6 @@ import Edit from "./pages/Edit";
 import ViewAll from "./pages/ViewAll";
 import ViewOne from "./pages/ViewOne";
 import ErrorPage from "./pages/ErrorPage";
-import Profile from "./pages/Profile";
 
 const routes = [
   {
@@ -32,11 +31,7 @@ const routes = [
       {
         path: "/dogs/:id",
         element: <ViewOne />,
-      },
-      {
-        path: "/profile/:id",
-        element: <Profile />,
-      },
+      }
     ],
   },
 ];
