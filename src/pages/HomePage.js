@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
-    <div>
+    <div id="home">
       <h1>Dog-Gone Dates</h1>
-      <p>Find your dog a date!</p>
+      <h3>Find your dog a date!</h3>
       <Link to="/add">
-        <button>Let's get started!</button>
+        <button className="btn-large bg-yellow">Let's get started!</button>
       </Link>
     </div>
   );

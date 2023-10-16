@@ -7,7 +7,7 @@ const Card = ({ dog }) => {
       <h2>{dog.name}</h2>
       <p>{dog.age}</p>
       <Link to={`/dogs/${dog.id}`}>
-        <button>View</button>
+        <button className="btn-small bg-blue">View</button>
       </Link>
     </div>
   );
