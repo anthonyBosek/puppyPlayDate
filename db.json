@@ -199,16 +199,6 @@
       "gender": "female",
       "bio": "Lily is a cheerful Bichon Frise who loves meeting new friends and playing in the park. She enjoys yogurt drops as snacks, but isn't a fan of the mailman!",
       "image": "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-    },
-    {
-      "owner": "Danner",
-      "name": "lotso",
-      "breed": "teddy bear",
-      "age": "20",
-      "gender": "male",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEfow3RQwyJPbVCodZ7HyaMwoxKwFYareUTeJcQ-ZwFYxx1RUt2mELMY1Z&s=0",
-      "bio": "Bear",
-      "id": 21
     }
   ]
 }
