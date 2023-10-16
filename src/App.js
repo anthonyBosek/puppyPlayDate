@@ -6,10 +6,11 @@ import SideNav from "./components/SideNav";
 const App = () => {
   const [isDark, setIsDark] = useState(localStorage.dark);
   const [authID, setAuthID] = useState(null);
+
   const toggleDarkMode = () => {
-    setIsDark(!isDark)
-    localStorage.dark = !localStorage.dark
-  }
+    setIsDark(!isDark);
+    localStorage.dark = !localStorage.dark;
+  };
 
   const authUserID = (id) => setAuthID(id);
 

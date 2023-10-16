@@ -199,6 +199,16 @@
       "gender": "female",
       "bio": "Lily is a cheerful Bichon Frise who loves meeting new friends and playing in the park. She enjoys yogurt drops as snacks, but isn't a fan of the mailman!",
       "image": "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      "owner": "Anthony B.",
+      "name": "Blue",
+      "breed": "American PB",
+      "age": "7",
+      "gender": "male",
+      "image": "https://images.unsplash.com/photo-1620001796685-adf7110fe1a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGl0YnVsbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60",
+      "bio": "Playful, energetic, friendly!",
+      "id": 21
     }
   ]
 }
