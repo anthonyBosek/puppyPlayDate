@@ -9,7 +9,7 @@ const Add = () => {
     if (dogData) {
       authUserID(dogData.id);
       localStorage.dog = JSON.stringify(dogData)
-      navigate(`/profile/${dogData.id}`);
+      navigate(`/dogs/${dogData.id}`);
     }
   };
 

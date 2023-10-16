@@ -191,6 +191,10 @@ h3 {
 p {
   margin: 1rem;
 }
+.bold {
+  font-weight: bolder;
+  margin-bottom: 0;
+}
 
 .bg-yellow {
   background-color: var(--yellow);
@@ -202,7 +206,7 @@ p {
 .bg-blue {
   background-color: var(--med-blue);
 }
-.bg-blue:hover {
+button .bg-blue:hover {
   background-color: var(--med-blue-lt);
 }
 
@@ -222,5 +226,7 @@ button:hover {
 }
 .btn-large {
   padding: 1rem 4rem;
+}
+.larger-text {
   font-size: 1.25rem;
 }
