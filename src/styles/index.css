@@ -206,7 +206,7 @@ p {
 .bg-blue {
   background-color: var(--med-blue);
 }
-button .bg-blue:hover {
+.bg-blue:hover {
   background-color: var(--med-blue-lt);
 }
 

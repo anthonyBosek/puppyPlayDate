@@ -34,12 +34,22 @@ const ViewOne = () => {
           About: <br /> {dog.bio}
         </p>
         <p>Owner: {dog.owner}</p>
-        {userDog.id === dog.id? 
-        <>
-        <Link to={`/edit/${id}`}>
-          <button className="btn-small bg-yellow larger-text"><FaTimes /></button>
-        </Link>
-        <button>Delete</button> </>: null}
+        {userDog.id === dog.id ? 
+          <>
+            <button className="btn-small bg-yellow larger-text">Delete</button> 
+            <Link to={`/edit/${id}`}>
+              <button className="btn-small bg-blue larger-text">Edit</button>
+            </Link>
+          </> : 
+          <>
+            <Link>
+              <button className="btn-small bg-yellow larger-text"><FaTimes /></button>
+            </Link>
+            <Link>
+              <button className="btn-small bg-blue larger-text"><FaBone /></button> 
+            </Link>
+          </>
+        }
       </div>
     </div> : navigate("/")
   );
