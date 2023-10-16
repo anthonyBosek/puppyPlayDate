@@ -209,6 +209,16 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEfow3RQwyJPbVCodZ7HyaMwoxKwFYareUTeJcQ-ZwFYxx1RUt2mELMY1Z&s=0",
       "bio": "adsasdasdas",
       "id": 21
+    },
+    {
+      "owner": "Danner",
+      "name": "monkey man",
+      "breed": "Cane Corso",
+      "age": "2",
+      "gender": "male",
+      "image": "https://avatars.githubusercontent.com/u/56900960?v=4",
+      "bio": "asdasdas",
+      "id": 22
     }
   ]
 }
