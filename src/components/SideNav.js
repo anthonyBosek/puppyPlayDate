@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { GrHome } from "react-icons/gr";
-import { FaDog, FaRegUser } from "react-icons/fa6";
+import { FaDog, FaRegUser, FaRegNewspaper } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
+import { BiCalendar } from "react-icons/bi";
 import Item from "./NavItem";
 
 const SideNav = ({ authID }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Home");
-  const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false
-  console.log(dog)
+  const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
 
   return (
     <Sidebar collapsed={isCollapsed}>
@@ -36,7 +36,7 @@ const SideNav = ({ authID }) => {
         />
         <Item
           title={authID || dog.id ? "My Profile" : "Create Profile"}
-          to={authID|| dog.id ? `/dogs/${authID || dog.id}` : "/add"}
+          to={authID || dog.id ? `/dogs/${authID || dog.id}` : "/add"}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}
@@ -50,15 +50,15 @@ const SideNav = ({ authID }) => {
         />
         <Item
           title="Events"
-          to="/"
-          icon={<FaDog />}
+          to="/events"
+          icon={<BiCalendar />}
           selected={selected}
           setSelected={setSelected}
         />
         <Item
           title="News"
-          to="/"
-          icon={<FaDog />}
+          to="/news"
+          icon={<FaRegNewspaper />}
           selected={selected}
           setSelected={setSelected}
         />
