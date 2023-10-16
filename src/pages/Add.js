@@ -2,9 +2,9 @@ import Form from "../components/Form";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 const Add = () => {
-  const authUserID = useOutletContext();
+  const [authUserID,_] = useOutletContext();
   const navigate = useNavigate();
-
+console.log(authUserID)
   const onAddDog = (dogData) => {
     if (dogData) {
       authUserID(dogData.id);
