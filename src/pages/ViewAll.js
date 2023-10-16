@@ -12,7 +12,7 @@ const ViewAll = () => {
 
   const allDogs = dogs.map((dog) => <Card key={dog.id} dog={dog} />);
   return (
-    <div>
+    <div className="view-all">
       <h1>ViewAll</h1>
       <div className="all-cards">{allDogs}</div>
     </div>

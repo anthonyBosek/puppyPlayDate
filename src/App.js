@@ -11,13 +11,14 @@ const App = () => {
 
   const authUserID = (id) => setAuthID(id);
 
-
   return (
-    <div className="app">
+    <div className={isDark ? "app dark" : "app"}>
       <SideNav authID={authID} />
       <main className="container">
         <TopNav isDark={isDark} toggleDarkMode={toggleDarkMode} />
-        <Outlet context={authUserID} />
+        <div className="outlet">
+          <Outlet context={authUserID} />
+        </div>
       </main>
     </div>
   );

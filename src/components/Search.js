@@ -1,11 +1,11 @@
-import { GrSearch } from "react-icons/gr";
+import { BsSearch } from "react-icons/bs";
 
 const Search = () => {
   return (
     <div className="search">
       <input type="text" placeholder="Search" />
       <button>
-        <GrSearch />
+        <BsSearch />
       </button>
     </div>
   );
