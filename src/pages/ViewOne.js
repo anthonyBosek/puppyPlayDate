@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams,useNavigate } from "react-router-dom";
 import { GiMale, GiFemale } from "react-icons/gi";
+import { FaBone, FaTimes } from "react-icons/fa";
 
 const ViewOne = () => {
   const { id } = useParams();
@@ -33,10 +34,10 @@ const ViewOne = () => {
           About: <br /> {dog.bio}
         </p>
         <p>Owner: {dog.owner}</p>
-        {userDog && userDog.id === dog.id? 
+        {userDog.id === dog.id? 
         <>
         <Link to={`/edit/${id}`}>
-          <button>Edit</button>
+          <button className="btn-small bg-yellow larger-text"><FaTimes /></button>
         </Link>
         <button>Delete</button> </>: null}
       </div>
