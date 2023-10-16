@@ -42,7 +42,7 @@ const routes = [
       {
         path: "/dogs/:id",
         element: <ViewOne />,
-      }
+      },
     ],
   },
 ];
