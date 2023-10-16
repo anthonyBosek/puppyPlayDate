@@ -5,20 +5,18 @@ import SideNav from "./components/SideNav";
 
 const App = () => {
   const [isDark, setIsDark] = useState(false);
-  const [currentDog,setCurrentDog] = useState({})
+  const [authID, setAuthID] = useState(null);
+
   const toggleDarkMode = () => setIsDark(!isDark);
 
-  const changeCurrentDog = (newDog) =>{
-    if(newDog){
-      setCurrentDog(newDog)
-    }
-  }
+  const authUserID = (id) => setAuthID(id);
+
   return (
     <div className="app">
-      <SideNav currentDog={currentDog}/>
+      <SideNav authID={authID} />
       <main className="container">
         <TopNav isDark={isDark} toggleDarkMode={toggleDarkMode} />
-        <Outlet context={changeCurrentDog}/>
+        <Outlet context={authUserID} />
       </main>
     </div>
   );

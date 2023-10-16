@@ -5,7 +5,7 @@ import { FaDog, FaRegUser } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 import Item from "./NavItem";
 
-const SideNav = ({currentDog}) => {
+const SideNav = ({ authID }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Home");
 
@@ -33,8 +33,8 @@ const SideNav = ({currentDog}) => {
           setSelected={setSelected}
         />
         <Item
-          title="My Profile"
-          to={`/profile/${currentDog.id}`}
+          title={authID ? "My Profile" : "Create Profile"}
+          to={authID ? `/profile/${authID}` : "/add"}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}
@@ -42,6 +42,20 @@ const SideNav = ({currentDog}) => {
         <Item
           title="View All Dogs"
           to="/dogs"
+          icon={<FaDog />}
+          selected={selected}
+          setSelected={setSelected}
+        />
+        <Item
+          title="Events"
+          to="/"
+          icon={<FaDog />}
+          selected={selected}
+          setSelected={setSelected}
+        />
+        <Item
+          title="News"
+          to="/"
           icon={<FaDog />}
           selected={selected}
           setSelected={setSelected}

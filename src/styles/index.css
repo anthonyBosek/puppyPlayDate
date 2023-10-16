@@ -60,19 +60,19 @@ li.ps-active {
   outline: none;
 }
 /* Danner */
-img{
+img {
   max-width: 250px;
   max-height: 250px;
   min-width: 200px;
   min-height: 200px;
 }
-.all-cards{
+.all-cards {
   place-content: center;
   place-items: center;
   justify-content: center;
   text-align: center;
 }
-.dogPage{
+.dogPage {
   place-content: center;
   place-items: center;
   justify-content: center;
