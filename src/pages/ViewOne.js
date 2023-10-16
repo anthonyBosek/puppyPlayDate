@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 const ViewOne = () => {
   const { id } = useParams();
   const [dog, setDog] = useState({});
-  const nav = useNavigate()
 
   useEffect(() => {
-    fetch(`http://localhost:3005/dogs/${id}`)
-      .then((resp) => resp.status === 200 || 201 || 304 ? resp.json() : false)
-      .then(setDog)
-      .catch(alert)
+    const getDogData = () => {
+      fetch(`http://localhost:3005/dogs/${id}`)
+        .then((resp) =>
+          resp.status === 200 || 201 || 304 ? resp.json() : false
+        )
+        .then(setDog)
+        .catch(alert);
+    };
+    getDogData();
   }, [id]);
 
- 
-
-  return ( dog.id ?
+  return (
     <div className="dogPage">
       <h1>{dog.name}</h1>
       <img src={dog.image} alt={dog.name} />
@@ -32,7 +33,7 @@ const ViewOne = () => {
         <button>Edit</button>
       </Link>
       <button>Delete</button>
-    </div> : nav("/")
+    </div>
   );
 };
 

@@ -62,19 +62,11 @@ li.ps-active {
 }
 /* Danner */
 img{
-  /* max-width: 250px;
-  max-height: 250px;
-  min-width: 200px;
-  min-height: 200px; */
   width: 100%;
   height: 300px;
   object-fit: cover;
 }
 .all-cards{
-  /* place-content: center;
-  place-items: center;
-  justify-content: center;
-  text-align: center; */
   display: grid;
   gap: 2rem;
   grid-auto-columns: 1fr;
@@ -87,7 +79,7 @@ img{
   align-items: center;
   max-width: 300px;
 }
-.dogPage{
+.dogPage {
   place-content: center;
   place-items: center;
   justify-content: center;
@@ -105,6 +97,7 @@ img{
   --yellow: #f7bd15;
   --yellow-lt: #f9d15b;
   --orange: #f55d3e;
+  /* --yell-grad: linear-gradient(to top, var(--yellow), var(--orange)); */
 }
 
 #home {
@@ -169,4 +162,3 @@ button:hover {
   padding: 1rem 4rem;
   font-size: 1.25rem;
 }
-
