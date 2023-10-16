@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useNavigate } from "react-router-dom";
 import { GiMale, GiFemale } from "react-icons/gi";
 
 const ViewOne = () => {
   const { id } = useParams();
   const [dog, setDog] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getDogData = () => {
@@ -19,6 +20,7 @@ const ViewOne = () => {
   }, [id]);
 
   return (
+    dog.id ?
     <div className="dogPage">
       <div>
         <img src={dog.image} alt={dog.name} />
@@ -35,7 +37,7 @@ const ViewOne = () => {
         </Link>
         <button>Delete</button>
       </div>
-    </div>
+    </div> : navigate("/")
   );
 };
 
