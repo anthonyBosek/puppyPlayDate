@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* anthony */
@@ -61,16 +62,30 @@ li.ps-active {
 }
 /* Danner */
 img{
-  max-width: 250px;
+  /* max-width: 250px;
   max-height: 250px;
   min-width: 200px;
-  min-height: 200px;
+  min-height: 200px; */
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 .all-cards{
-  place-content: center;
+  /* place-content: center;
   place-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: center; */
+  display: grid;
+  gap: 2rem;
+  grid-auto-columns: 1fr;
+  grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+  padding: 1rem;
+}
+.dog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
 }
 .dogPage{
   place-content: center;
@@ -85,8 +100,73 @@ img{
   --dark-grey: #393d3f;
   --light-blue: #53d8fb;
   --med-blue: #0a71d8;
-  /* --blue-grad: linear-gradient(to top, var(--light-blue), var(--med-blue)); */
+  --med-blue-lt: #549ce4;
+  --dark-blue: #032241;
   --yellow: #f7bd15;
+  --yellow-lt: #f9d15b;
   --orange: #f55d3e;
-  /* --yell-grad: linear-gradient(to top, var(--yellow), var(--orange)); */
 }
+
+#home {
+  background-image: url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80");
+}
+
+#error {
+  background-image: url("https://images.unsplash.com/photo-1674983998168-ed9fb7f5e266?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1979&q=80");
+}
+
+#home, #error {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 7rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+h1 {
+  color: var(--med-blue);
+  font-weight: bolder; 
+  margin: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+.bg-yellow:hover {
+  background-color: var(--yellow-lt);
+}
+
+.bg-blue {
+  background-color: var(--med-blue);
+}
+.bg-blue:hover {
+  background-color: var(--med-blue-lt);
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btn-small {
+  padding: 0.5rem 2rem;
+}
+.btn-large {
+  padding: 1rem 4rem;
+  font-size: 1.25rem;
+}
+
