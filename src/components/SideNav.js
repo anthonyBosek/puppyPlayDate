@@ -8,6 +8,7 @@ import Item from "./NavItem";
 const SideNav = ({ authID }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Home");
+  const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false
 
   return (
     <Sidebar collapsed={isCollapsed}>
@@ -34,7 +35,7 @@ const SideNav = ({ authID }) => {
         />
         <Item
           title={authID ? "My Profile" : "Create Profile"}
-          to={authID ? `/profile/${authID}` : "/add"}
+          to={authID ? `/profile/${authID || dog.id}` : "/add"}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}

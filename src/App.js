@@ -9,7 +9,16 @@ const App = () => {
 
   const toggleDarkMode = () => setIsDark(!isDark);
 
+
+  const changeCurrentDog = (newDog) =>{
+    if(newDog){
+      setCurrentDog(newDog)
+      localStorage.dog = JSON.stringify(newDog)
+    }
+  }
+
   const authUserID = (id) => setAuthID(id);
+
 
   return (
     <div className="app">
