@@ -7,7 +7,6 @@ import ViewAll from "./pages/ViewAll";
 import News from "./pages/News";
 import Events from "./pages/Events";
 import ViewOne from "./pages/ViewOne";
-import ErrorPage from "./pages/ErrorPage";
 
 const routes = [
   {
