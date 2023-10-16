@@ -11,6 +11,7 @@ const App = () => {
   const changeCurrentDog = (newDog) =>{
     if(newDog){
       setCurrentDog(newDog)
+      localStorage.dog = JSON.stringify(newDog)
     }
   }
   return (

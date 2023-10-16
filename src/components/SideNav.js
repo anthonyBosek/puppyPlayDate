@@ -8,6 +8,7 @@ import Item from "./NavItem";
 const SideNav = ({currentDog}) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Home");
+  const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false
 
   return (
     <Sidebar collapsed={isCollapsed}>
@@ -34,7 +35,7 @@ const SideNav = ({currentDog}) => {
         />
         <Item
           title="My Profile"
-          to={`/profile/${currentDog.id}`}
+          to={`/profile/${currentDog.id || dog.id}`}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}
