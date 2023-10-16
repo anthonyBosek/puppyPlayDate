@@ -5,15 +5,20 @@ import SideNav from "./components/SideNav";
 
 const App = () => {
   const [isDark, setIsDark] = useState(false);
-
+  const [currentDog,setCurrentDog] = useState({})
   const toggleDarkMode = () => setIsDark(!isDark);
 
+  const changeCurrentDog = (newDog) =>{
+    if(newDog){
+      setCurrentDog(newDog)
+    }
+  }
   return (
     <div className="app">
-      <SideNav />
+      <SideNav currentDog={currentDog}/>
       <main className="container">
         <TopNav isDark={isDark} toggleDarkMode={toggleDarkMode} />
-        <Outlet />
+        <Outlet context={changeCurrentDog}/>
       </main>
     </div>
   );
