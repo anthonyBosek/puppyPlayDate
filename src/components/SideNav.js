@@ -36,7 +36,7 @@ const SideNav = ({ authID }) => {
         />
         <Item
           title={authID || dog.id ? "My Profile" : "Create Profile"}
-          to={authID|| dog.id ? `/profile/${authID || dog.id}` : "/add"}
+          to={authID|| dog.id ? `/dogs/${authID || dog.id}` : "/add"}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}

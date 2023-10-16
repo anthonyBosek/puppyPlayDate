@@ -5,13 +5,14 @@ import { GiMale, GiFemale } from "react-icons/gi";
 const ViewOne = () => {
   const { id } = useParams();
   const [dog, setDog] = useState({});
+  const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false
   const navigate = useNavigate();
 
   useEffect(() => {
     const getDogData = () => {
       fetch(`http://localhost:3005/dogs/${id}`)
         .then((resp) =>
-          resp.status === 200 || 201 || 304 ? resp.json() : false
+          resp.status === 200 || 304 ? resp.json() : false
         )
         .then(setDog)
         .catch(alert);
@@ -32,10 +33,12 @@ const ViewOne = () => {
           About: <br /> {dog.bio}
         </p>
         <p>Owner: {dog.owner}</p>
+        {userDog && userDog.id === dog.id? 
+        <>
         <Link to={`/edit/${id}`}>
           <button>Edit</button>
         </Link>
-        <button>Delete</button>
+        <button>Delete</button> </>: null}
       </div>
     </div> : navigate("/")
   );
