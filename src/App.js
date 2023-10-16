@@ -2,15 +2,18 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import TopNav from "./components/TopNav";
 import SideNav from "./components/SideNav";
+// import { dark } from "@mui/material/styles/createPalette";
 
 const App = () => {
-  const [isDark, setIsDark] = useState(localStorage.dark);
+  const [isDark, setIsDark] = useState(localStorage.dark === "true");
   const [authID, setAuthID] = useState(null);
-
+  
   const toggleDarkMode = () => {
-    setIsDark(!isDark);
-    localStorage.dark = !localStorage.dark;
-  };
+    setIsDark(!isDark)
+    localStorage.setItem("dark",!isDark)
+
+  }
+
 
   const authUserID = (id) => setAuthID(id);
 
