@@ -6,7 +6,7 @@ const TopNav = ({ isDark, toggleDarkMode,newSearch,searchTerm }) => {
   return (
     <nav className="top-nav">
       <div className="links">
-        <Search newSearch={newSearch} searchTerm={searchTerm}/>
+        <Search newSearch={newSearch} searchTerm={searchTerm} />
         <span onClick={toggleDarkMode} className="icon">
           {isDark ? <BsSun /> : <BsMoon />}
         </span>
