@@ -44,7 +44,7 @@ const ViewOne = () => {
               <button className="btn-small bg-blue larger-text">Edit</button>
             </Link>
           </>
-        ) : (
+         : 
           <>
             <Link>
               <button className="btn-small bg-yellow larger-text">
@@ -57,12 +57,11 @@ const ViewOne = () => {
               </button>
             </Link>
           </>
-        )}
+        }
       </div>
     </div>
-  ) : (
-    navigate("/")
-  );
+  ) : 
+    navigate("/");
 };
 
 export default ViewOne;

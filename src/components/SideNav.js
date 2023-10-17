@@ -11,7 +11,7 @@ const SideNav = ({ authID }) => {
   const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
   const [isCollapsed, setIsCollapsed] = useState(window.innerWidth > 768 ? false : true);
   const location = useLocation().pathname
-  const shorthPath = location.slice(0, location.indexOf("/",1) === -1 ? location.length : location.indexOf("/",1));
+  const shortPath = location.slice(0, location.indexOf("/",1) === -1 ? location.length : location.indexOf("/",1));
   const paths = [
     {title: "Home", path: "/"},
     {title: "Our Play Pack", path: "/dogs"},
@@ -20,12 +20,12 @@ const SideNav = ({ authID }) => {
     {title: "Play Events", path: "/events"},
     {title: "Play News", path: "/news"}
   ]
-  const [selected, setSelected] = useState(paths.find(a => a.path === shorthPath ).title);
+  const [selected, setSelected] = useState(paths.find(a => a.path === shortPath ).title);
   
   //Re render selected list item even on redirect triggered from other components
   useEffect(()=>{
-    setSelected(paths.find(a => a.path === shorthPath ).title)
-  },[shorthPath])
+    setSelected(paths.find(a => a.path === shortPath ).title)
+  },[shortPath])
 
 
   return (
