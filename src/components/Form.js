@@ -57,7 +57,8 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
     <div>
       <div className="form-div">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="owner" className="col-3">Owner name:
+          <label htmlFor="owner" className="col-3">
+            Owner name:
             <input
               type="text"
               name="owner"
@@ -67,7 +68,8 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
             />
           </label>
 
-          <label htmlFor="name" className="col-3">Pet name:
+          <label htmlFor="name" className="col-3">
+            Pet name:
             <input
               type="text"
               name="name"
@@ -77,7 +79,8 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
             />
           </label>
 
-          <label htmlFor="breed" className="col-2">Breed:
+          <label htmlFor="breed" className="col-2">
+            Breed:
             <input
               type="text"
               name="breed"
@@ -87,7 +90,8 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
             />
           </label>
 
-          <label htmlFor="age" className="col-2">Age:
+          <label htmlFor="age" className="col-2">
+            Age:
             <input
               type="number"
               name="age"
@@ -122,7 +126,8 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
             </label>
           </fieldset>
 
-          <label htmlFor="image" className="col-6">Image:
+          <label htmlFor="image" className="col-6">
+            Image:
             <input
               type="text"
               name="image"
@@ -132,7 +137,8 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
             />
           </label>
 
-          <label htmlFor="bio" className="col-6">About me:
+          <label htmlFor="bio" className="col-6">
+            About me:
             <textarea
               name="bio"
               id="bio"
@@ -141,7 +147,11 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
             />
           </label>
 
-          <input type="submit" value="Submit" className="btn-large bg-yellow larger-text" />
+          <input
+            type="submit"
+            value="Submit"
+            className="btn-large bg-yellow larger-text"
+          />
         </form>
       </div>
     </div>

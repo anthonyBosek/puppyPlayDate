@@ -10,12 +10,14 @@ const ViewOne = () => {
   const [dog, setDog] = useState({});
   let matched = false
 
-  if(!localStorage.matches){
-    localStorage.setItem("matches","[]")
+  if (!localStorage.matches) {
+    localStorage.setItem("matches", "[]");
   }
+
   if(!localStorage.unmatches){
     localStorage.setItem("unmatches","[]")
   }
+  
   const matches = localStorage.matches
   const unmatches = localStorage.unmatches
 
@@ -53,10 +55,8 @@ const ViewOne = () => {
     }else{
       alert("Please sign up first")
     }
-    
-  }
-  // addMatch({name:"hello"})
-  
+  };
+
   useEffect(() => {
     const getDogData = () => {
       fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
@@ -65,7 +65,7 @@ const ViewOne = () => {
         .catch(alert);
     };
     getDogData();
-  }, [id]);
+  }, [id, userDog.id]);
 
   return dog.id ? (
     <div className="dogPage">
@@ -83,30 +83,46 @@ const ViewOne = () => {
         <p>{dog.bio}</p>
         <p className="bold">Get in touch with my people:</p>
         <p>{dog.owner}</p>
-        {userDog.id === dog.id ? 
+        {userDog.id === dog.id ? (
           <>
-            <button className="btn-small bg-yellow larger-text" onClick={()=>{localStorage.removeItem("dog");navigate("/add")}}>Delete</button>
+            <button
+              className="btn-small bg-yellow larger-text"
+              onClick={() => {
+                localStorage.removeItem("dog");
+                navigate("/add");
+              }}
+            >
+              Delete
+            </button>
             <Link to={`/edit/${id}`}>
               <button className="btn-small bg-blue larger-text">Edit</button>
             </Link>
           </>
-        : <>
+        ) : (
+          <>
             <Link>
-              <button className="btn-small bg-yellow larger-text" onClick={() => removeMatch(dog)}>
+              <button
+                className="btn-small bg-yellow larger-text"
+                onClick={() => removeMatch(dog)}
+              >
                 <FaTimes />
               </button>
             </Link>
             <Link>
-              <button className="btn-small bg-blue larger-text" onClick={() => addMatch(dog)}>
+              <button
+                className="btn-small bg-blue larger-text"
+                onClick={() => addMatch(dog)}
+              >
                 <FaBone />
               </button>
             </Link>
           </>
-        }
+        )}
       </div>
     </div>
-  ) : 
-    navigate("/");
+  ) : (
+    navigate("/")
+  );
 };
 
 export default ViewOne;
