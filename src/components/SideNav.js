@@ -5,12 +5,21 @@ import { FaDog, FaRegUser, FaRegNewspaper } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 import { BiCalendar } from "react-icons/bi";
 import Item from "./NavItem";
+import { useLocation } from "react-router-dom";
 
 const SideNav = ({ authID }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Home");
   const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
-
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const location = useLocation().pathname
+  const paths = [
+    {title: "Home", path: "/"},
+    {title: "Our Play Pack", path: "/dogs"},
+    {title: authID || dog.id ? "My Play Profile" : "Create Play Profile", path: "/add"},
+    {title: "Play Events", path: "/events"},
+    {title: "Play News", path: "/news"}
+  ]
+  const [selected, setSelected] = useState(paths.find(a => a.path === location).title);
+  
   return (
     <Sidebar collapsed={isCollapsed}>
       <Menu>
