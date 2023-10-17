@@ -1,7 +1,10 @@
+import { useOutletContext } from "react-router-dom";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
+// import { useOutletContext } from "react-router-dom";
 
 const ViewAll = () => {
+  const [_,f] = useOutletContext();
   const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
@@ -10,7 +13,7 @@ const ViewAll = () => {
       .then(setDogs);
   }, []);
 
-  const allDogs = dogs.map((dog) => <Card key={dog.id} dog={dog} />);
+  const allDogs = dogs.filter(dog=>dog.name.toLowerCase().includes(f.toLowerCase())).map((dog) => <Card key={dog.id} dog={dog} />);
   return (
     <div className="view-all">
       <h1>ViewAll</h1>

@@ -1,9 +1,9 @@
 import { BsSearch } from "react-icons/bs";
 
-const Search = () => {
+const Search = ({searchTerm, newSearch}) => {
   return (
     <div className="search">
-      <input type="text" placeholder="Search" />
+      <input type="text" placeholder="Search" value={searchTerm} onChange={newSearch}/>
       <button>
         <BsSearch />
       </button>

@@ -35,28 +35,28 @@ const SideNav = ({ authID }) => {
           setSelected={setSelected}
         />
         <Item
-          title={authID || dog.id ? "My Profile" : "Create Profile"}
+          title={authID || dog.id ? "My Play Profile" : "Create Play Profile"}
           to={authID || dog.id ? `/dogs/${authID || dog.id}` : "/add"}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}
         />
         <Item
-          title="View All Dogs"
+          title="Our Play Pack"
           to="/dogs"
           icon={<FaDog />}
           selected={selected}
           setSelected={setSelected}
         />
         <Item
-          title="Events"
+          title="Play Events"
           to="/events"
           icon={<BiCalendar />}
           selected={selected}
           setSelected={setSelected}
         />
         <Item
-          title="News"
+          title="Play News"
           to="/news"
           icon={<FaRegNewspaper />}
           selected={selected}
