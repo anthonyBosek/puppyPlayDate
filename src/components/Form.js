@@ -55,7 +55,6 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
 
   return (
     <div>
-      <h2>Please create a profile:</h2>
       <div className="form-div">
         <form onSubmit={handleSubmit}>
           <label htmlFor="owner" className="col-3">Owner name:

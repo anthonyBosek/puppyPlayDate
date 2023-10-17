@@ -14,7 +14,7 @@ const Add = () => {
 
   return (
     <div>
-      <h1>Create User Profile</h1>
+      <h1>Create Play Profile</h1>
       <Form onAddDog={onAddDog} />
     </div>
   );

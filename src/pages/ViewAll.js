@@ -16,7 +16,7 @@ const ViewAll = () => {
   const allDogs = dogs.filter(dog=>dog.name.toLowerCase().includes(searchTerm.toLowerCase())).map((dog) => <Card key={dog.id} dog={dog} />);
   return (
     <div className="view-all">
-      <h1>ViewAll</h1>
+      <h1>Our Play Pack</h1>
       <div className="all-cards">{allDogs}</div>
     </div>
   );
