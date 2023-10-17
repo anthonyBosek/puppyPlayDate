@@ -8,11 +8,16 @@ const ViewOne = () => {
   const { id } = useParams() || userDog.id;
   const navigate = useNavigate();
   const [dog, setDog] = useState({});
+  let matched = false
 
   if(!localStorage.matches){
     localStorage.setItem("matches","[]")
   }
+  if(!localStorage.unmatches){
+    localStorage.setItem("unmatches","[]")
+  }
   const matches = localStorage.matches
+  const unmatches = localStorage.unmatches
 
   const addMatch = (newMatchDog) =>{
     const allDogs = JSON.parse(matches)
@@ -27,9 +32,14 @@ const ViewOne = () => {
 
   const removeMatch = (newMatchDog) =>{
     const allDogs = JSON.parse(matches)
+    const allBlockedDogs = JSON.parse(unmatches)
     const ids = allDogs.map(doggy => doggy.id)
+    const blockedids = allBlockedDogs.map(doggy => doggy.id)
     if(!(ids.includes(newMatchDog.id))){
-      console.log("Dog isnt matched with")
+      if(!(blockedids).includes(newMatchDog.id)){
+        allBlockedDogs.push(newMatchDog)
+        localStorage.setItem("unmatches",JSON.stringify(allBlockedDogs))
+      }
     }else{
       const newDogs = allDogs.filter(doggy => doggy.id !== newMatchDog.id)
       localStorage.setItem("matches",JSON.stringify(newDogs))
@@ -37,7 +47,6 @@ const ViewOne = () => {
   }
   // addMatch({name:"hello"})
   
-
   useEffect(() => {
     const getDogData = () => {
       fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
