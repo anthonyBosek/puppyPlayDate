@@ -8,7 +8,7 @@ const Add = () => {
     if (dogData) {
       authUserID(dogData.id);
       localStorage.dog = JSON.stringify(dogData);
-      navigate(`/dogs/${dogData.id}`);
+      navigate(`/profile/`);
     }
   };
 

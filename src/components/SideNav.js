@@ -15,7 +15,8 @@ const SideNav = ({ authID }) => {
   const paths = [
     {title: "Home", path: "/"},
     {title: "Our Play Pack", path: "/dogs"},
-    {title: authID || dog.id ? "My Play Profile" : "Create Play Profile", path: "/add"},
+    {title: "Create Play Profile", path: "/add"},
+    {title: "My Play Profile", path: "/profile"},
     {title: "Play Events", path: "/events"},
     {title: "Play News", path: "/news"}
   ]
@@ -52,7 +53,7 @@ const SideNav = ({ authID }) => {
         />
         <Item
           title={authID || dog.id ? "My Play Profile" : "Create Play Profile"}
-          to={authID || dog.id ? `/dogs/${authID || dog.id}` : "/add"}
+          to={authID || dog.id ? `/profile/` : "/add"}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}
