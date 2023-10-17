@@ -1,15 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { GrHome } from "react-icons/gr";
 import { FaDog, FaRegUser, FaRegNewspaper } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 import { BiCalendar } from "react-icons/bi";
 import Item from "./NavItem";
+import { useLocation } from "react-router-dom";
 
 const SideNav = ({ authID }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Home");
   const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
+  const [isCollapsed, setIsCollapsed] = useState(window.innerWidth > 768 ? false : true);
+  const location = useLocation().pathname
+  const shorthPath = location.slice(0, location.indexOf("/",1) === -1 ? location.length : location.indexOf("/",1));
+  const paths = [
+    {title: "Home", path: "/"},
+    {title: "Our Play Pack", path: "/dogs"},
+    {title: "Create Play Profile", path: "/add"},
+    {title: "My Play Profile", path: "/profile"},
+    {title: "Play Events", path: "/events"},
+    {title: "Play News", path: "/news"}
+  ]
+  const [selected, setSelected] = useState(paths.find(a => a.path === shorthPath ).title);
+  
+  //Re render selected list item even on redirect triggered from other components
+  useEffect(()=>{
+    setSelected(paths.find(a => a.path === shorthPath ).title)
+  },[shorthPath])
+
 
   return (
     <Sidebar collapsed={isCollapsed}>
@@ -20,7 +37,7 @@ const SideNav = ({ authID }) => {
         >
           {!isCollapsed && (
             <div>
-              <span className="title">Puppy Play Date</span>
+              <span className="title">Puppy PlayDate</span>
               <span>
                 <IoMenuOutline onClick={() => setIsCollapsed(!isCollapsed)} />
               </span>
@@ -36,7 +53,7 @@ const SideNav = ({ authID }) => {
         />
         <Item
           title={authID || dog.id ? "My Play Profile" : "Create Play Profile"}
-          to={authID || dog.id ? `/dogs/${authID || dog.id}` : "/add"}
+          to={authID || dog.id ? `/profile/` : "/add"}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}

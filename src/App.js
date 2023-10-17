@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import TopNav from "./components/TopNav";
 import SideNav from "./components/SideNav";
@@ -8,7 +8,6 @@ const App = () => {
   const [isDark, setIsDark] = useState(localStorage.dark === "true");
   const [searchTerm,setSearchTerm] = useState("")
   const [authID, setAuthID] = useState(null);
-  
   
   const toggleDarkMode = () => {
     setIsDark(!isDark)
@@ -24,6 +23,7 @@ const App = () => {
   const authUserID = (id) => setAuthID(id);
 
   const ctx = [authUserID,searchTerm]
+  
 
   return (
     <div className={isDark ? "app dark" : "app"}>

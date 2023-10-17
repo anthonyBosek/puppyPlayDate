@@ -4,15 +4,16 @@ import { GiMale, GiFemale } from "react-icons/gi";
 import { FaBone, FaTimes } from "react-icons/fa";
 
 const ViewOne = () => {
-  const { id } = useParams();
+  const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
+  const { id } = useParams() || userDog.id;
   const navigate = useNavigate();
   const [dog, setDog] = useState({});
 
-  const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
+  
 
   useEffect(() => {
     const getDogData = () => {
-      fetch(`http://localhost:3005/dogs/${id}`)
+      fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
         .then((resp) => (resp.status === 200 || 304 ? resp.json() : false))
         .then(setDog)
         .catch(alert);
