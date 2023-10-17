@@ -29,13 +29,12 @@ const ViewOne = () => {
           {dog.name}, <span>{dog.age}</span>
         </h1>
         <p>
-          {dog.gender === "male" ? <GiMale /> : <GiFemale />}
-          {dog.breed}
+          {dog.gender === "male" ? <GiMale /> : <GiFemale />} {dog.breed}
         </p>
-        <p>
-          About: <br /> {dog.bio}
-        </p>
-        <p>Owner: {dog.owner}</p>
+        <p className="bold">About me:</p>
+        <p>{dog.bio}</p>
+        <p className="bold">Get in touch with my people:</p>
+        <p>{dog.owner}</p>
         {userDog.id === dog.id ? 
           <>
             <button className="btn-small bg-yellow larger-text">Delete</button> 

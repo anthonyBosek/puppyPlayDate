@@ -56,83 +56,95 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
   return (
     <div>
       <h2>Please create a profile:</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="owner">Owner name:</label>
-        <input
-          type="text"
-          name="owner"
-          id="owner"
-          value={formData.owner}
-          onChange={handleChange}
-        />
+      <div className="form-div">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="owner" className="col-3">Owner name:
+            <input
+              type="text"
+              name="owner"
+              id="owner"
+              value={formData.owner}
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="name">Pet name:</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
+          <label htmlFor="name" className="col-3">Pet name:
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="breed">Breed:</label>
-        <input
-          type="text"
-          name="breed"
-          id="breed"
-          value={formData.breed}
-          onChange={handleChange}
-        />
+          <label htmlFor="breed" className="col-2">Breed:
+            <input
+              type="text"
+              name="breed"
+              id="breed"
+              value={formData.breed}
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="age">Age:</label>
-        <input
-          type="number"
-          name="age"
-          id="age"
-          value={formData.age}
-          onChange={handleChange}
-        />
+          <label htmlFor="age" className="col-2">Age:
+            <input
+              type="number"
+              name="age"
+              id="age"
+              value={formData.age}
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="female">
-          <input
-            type="radio"
-            name="gender"
-            value="female"
-            checked={formData.gender === "female"}
-            onChange={handleChange}
-          />
-          Female
-        </label>
-        <label htmlFor="male">
-          <input
-            type="radio"
-            name="gender"
-            value="male"
-            checked={formData.gender === "male"}
-            onChange={handleChange}
-          />
-          Male
-        </label>
+          <fieldset id="flex" className="col-2">
+            <label htmlFor="female" className="inline-block">
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                checked={formData.gender === "female"}
+                onChange={handleChange}
+                className="inline-block"
+              />
+              Female
+            </label>
+            <label htmlFor="male" className="inline-block">
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                checked={formData.gender === "male"}
+                onChange={handleChange}
+                className="inline-block"
+              />
+              Male
+            </label>
+          </fieldset>
 
-        <label htmlFor="image">Image:</label>
-        <input
-          type="text"
-          name="image"
-          id="image"
-          value={formData.image}
-          onChange={handleChange}
-        />
+          <label htmlFor="image" className="col-6">Image:
+            <input
+              type="text"
+              name="image"
+              id="image"
+              value={formData.image}
+              onChange={handleChange}
+            />
+          </label>
 
-        <label htmlFor="bio">About me:</label>
-        <textarea
-          name="bio"
-          id="bio"
-          value={formData.bio}
-          onChange={handleChange}
-        />
+          <label htmlFor="bio" className="col-6">About me:
+            <textarea
+              name="bio"
+              id="bio"
+              value={formData.bio}
+              onChange={handleChange}
+            />
+          </label>
 
-        <input type="submit" value="Submit" />
-      </form>
+          <input type="submit" value="Submit" className="btn-large bg-yellow larger-text" />
+        </form>
+      </div>
     </div>
   );
 };

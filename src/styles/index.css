@@ -80,7 +80,8 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
 
 /* Danner */
 .all-cards,
-.dogPage {
+.dogPage,
+.form-div {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -178,7 +179,9 @@ h1 span {
   font-size: 1.25rem;
   font-weight: normal;
 }
-
+h2 {
+  margin: 1rem;
+}
 h2 span {
   font-size: 1rem;
   font-weight: normal;
@@ -210,7 +213,8 @@ p {
   background-color: var(--med-blue-lt);
 }
 
-button {
+button,
+form input[type = "submit"] {
   border: none;
   text-decoration: none;
   margin: 1rem;
@@ -229,4 +233,57 @@ button:hover {
 }
 .larger-text {
   font-size: 1.25rem;
+}
+
+form {
+  min-width: 300px;
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-grow: 1;
+  justify-content: center;
+}
+form .form-div {
+  padding: 1rem;
+}
+form .col-2 {
+  display: inline;
+  width: 30%;
+}
+form .col-3 {
+  display: inline;
+  width: 46%;
+}
+form .col-6 {
+  display: inline;
+  width: 95%;
+}
+
+label, form input, textarea {
+  display: block;
+}
+fieldset #flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+fieldset label .inline-block,
+#flex label.inline-block {
+  display: inline-block;
+  margin: 0.25rem;
+}
+
+form input[type="text"],
+form input[type="number"],
+textarea {
+  width: 100%;
+  padding: 0.25rem;
+  margin: 0.25rem 0;
+}
+
+textarea {
+  height: 75px;
+  padding: 0.25rem;
+  margin: 0.25rem 0;
 }
