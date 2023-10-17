@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 const ViewAll = () => {
   const { searchTerm } = useOutletContext();
   const [dogs, setDogs] = useState([]);
+  const unmatches = JSON.parse(localStorage.unmatches || "[]")
+  const blockedIds = unmatches.map(doggy => doggy.id)
 
   useEffect(() => {
     fetch("http://localhost:3005/dogs")
@@ -13,9 +15,11 @@ const ViewAll = () => {
       .then(setDogs);
   }, []);
 
+
   const allDogs = dogs
     .filter((dog) => dog.name.toLowerCase().includes(searchTerm.toLowerCase()))
     .map((dog) => <Card key={dog.id} dog={dog} />);
+
   return (
     <div className="view-all">
       <h1>Our Play Pack</h1>
