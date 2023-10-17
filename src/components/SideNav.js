@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 
 const SideNav = ({ authID }) => {
   const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(window.innerWidth > 768 ? false : true);
   const location = useLocation().pathname
   const paths = [
     {title: "Home", path: "/"},
@@ -29,7 +29,7 @@ const SideNav = ({ authID }) => {
         >
           {!isCollapsed && (
             <div>
-              <span className="title">Puppy Play Date</span>
+              <span className="title">Puppy PlayDate</span>
               <span>
                 <IoMenuOutline onClick={() => setIsCollapsed(!isCollapsed)} />
               </span>
