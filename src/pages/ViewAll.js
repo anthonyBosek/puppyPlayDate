@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // import { useOutletContext } from "react-router-dom";
 
 const ViewAll = () => {
-  const [_,searchTerm] = useOutletContext();
+  const { searchTerm } = useOutletContext();
   const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,9 @@ const ViewAll = () => {
       .then(setDogs);
   }, []);
 
-  const allDogs = dogs.filter(dog=>dog.name.toLowerCase().includes(searchTerm.toLowerCase())).map((dog) => <Card key={dog.id} dog={dog} />);
+  const allDogs = dogs
+    .filter((dog) => dog.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    .map((dog) => <Card key={dog.id} dog={dog} />);
   return (
     <div className="view-all">
       <h1>Our Play Pack</h1>

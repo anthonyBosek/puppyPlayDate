@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
+import { useLocation } from "react-router-dom";
+import logo from "../assets/logo.jpg";
 import { GrHome } from "react-icons/gr";
 import { GiJumpingDog } from "react-icons/gi";
 import { FaDog, FaRegUser, FaRegNewspaper } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 import { BiCalendar } from "react-icons/bi";
 import Item from "./NavItem";
-import { useLocation } from "react-router-dom";
 
 const SideNav = ({ authID }) => {
   const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
@@ -51,6 +52,9 @@ const SideNav = ({ authID }) => {
             </div>
           )}
         </MenuItem>
+        <span className="logo">
+          {!isCollapsed ? <img src={logo} alt="logo" /> : null}
+        </span>
         <Item
           title="Home"
           to="/"

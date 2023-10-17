@@ -9,34 +9,33 @@ const ViewOne = () => {
   const navigate = useNavigate();
   const [dog, setDog] = useState({});
 
-  if(!localStorage.matches){
-    localStorage.setItem("matches","[]")
+  if (!localStorage.matches) {
+    localStorage.setItem("matches", "[]");
   }
-  const matches = localStorage.matches
+  const matches = localStorage.matches;
 
-  const addMatch = (newMatchDog) =>{
-    const allDogs = JSON.parse(matches)
-    const ids = allDogs.map(doggy => doggy.id)
-    if(!(ids).includes(newMatchDog.id) && (userDog.id !== newMatchDog.id)){
-      allDogs.push(newMatchDog)
-      localStorage.setItem("matches",JSON.stringify(allDogs))
-    }else{
-      console.log("Already matched")
+  const addMatch = (newMatchDog) => {
+    const allDogs = JSON.parse(matches);
+    const ids = allDogs.map((doggy) => doggy.id);
+    if (!ids.includes(newMatchDog.id) && userDog.id !== newMatchDog.id) {
+      allDogs.push(newMatchDog);
+      localStorage.setItem("matches", JSON.stringify(allDogs));
+    } else {
+      console.log("Already matched");
     }
-  }
+  };
 
-  const removeMatch = (newMatchDog) =>{
-    const allDogs = JSON.parse(matches)
-    const ids = allDogs.map(doggy => doggy.id)
-    if(!(ids.includes(newMatchDog.id))){
-      console.log("Dog isnt matched with")
-    }else{
-      const newDogs = allDogs.filter(doggy => doggy.id !== newMatchDog.id)
-      localStorage.setItem("matches",JSON.stringify(newDogs))
+  const removeMatch = (newMatchDog) => {
+    const allDogs = JSON.parse(matches);
+    const ids = allDogs.map((doggy) => doggy.id);
+    if (!ids.includes(newMatchDog.id)) {
+      console.log("Dog isnt matched with");
+    } else {
+      const newDogs = allDogs.filter((doggy) => doggy.id !== newMatchDog.id);
+      localStorage.setItem("matches", JSON.stringify(newDogs));
     }
-  }
+  };
   // addMatch({name:"hello"})
-  
 
   useEffect(() => {
     const getDogData = () => {
@@ -46,7 +45,7 @@ const ViewOne = () => {
         .catch(alert);
     };
     getDogData();
-  }, [id]);
+  }, [id, userDog.id]);
 
   return dog.id ? (
     <div className="dogPage">
@@ -64,30 +63,46 @@ const ViewOne = () => {
         <p>{dog.bio}</p>
         <p className="bold">Get in touch with my people:</p>
         <p>{dog.owner}</p>
-        {userDog.id === dog.id ? 
+        {userDog.id === dog.id ? (
           <>
-            <button className="btn-small bg-yellow larger-text" onClick={()=>{localStorage.removeItem("dog");navigate("/add")}}>Delete</button>
+            <button
+              className="btn-small bg-yellow larger-text"
+              onClick={() => {
+                localStorage.removeItem("dog");
+                navigate("/add");
+              }}
+            >
+              Delete
+            </button>
             <Link to={`/edit/${id}`}>
               <button className="btn-small bg-blue larger-text">Edit</button>
             </Link>
           </>
-        : <>
+        ) : (
+          <>
             <Link>
-              <button className="btn-small bg-yellow larger-text" onClick={() => removeMatch(dog)}>
+              <button
+                className="btn-small bg-yellow larger-text"
+                onClick={() => removeMatch(dog)}
+              >
                 <FaTimes />
               </button>
             </Link>
             <Link>
-              <button className="btn-small bg-blue larger-text" onClick={() => addMatch(dog)}>
+              <button
+                className="btn-small bg-blue larger-text"
+                onClick={() => addMatch(dog)}
+              >
                 <FaBone />
               </button>
             </Link>
           </>
-        }
+        )}
       </div>
     </div>
-  ) : 
-    navigate("/");
+  ) : (
+    navigate("/")
+  );
 };
 
 export default ViewOne;
