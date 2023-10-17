@@ -39,14 +39,14 @@ const ViewOne = () => {
         <p>{dog.owner}</p>
         {userDog.id === dog.id ? 
           <>
-            <button className="btn-small bg-yellow larger-text">Delete</button>
+            <button className="btn-small bg-yellow larger-text" onClick={()=>{localStorage.removeItem("dog");navigate("/add")}}>Delete</button>
             <Link to={`/edit/${id}`}>
               <button className="btn-small bg-blue larger-text">Edit</button>
             </Link>
           </>
         : <>
             <Link>
-              <button className="btn-small bg-yellow larger-text">
+              <button className="btn-small bg-yellow larger-text" >
                 <FaTimes />
               </button>
             </Link>
