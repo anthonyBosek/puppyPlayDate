@@ -59,9 +59,8 @@ const ViewOne = () => {
         }
       </div>
     </div>
-  ) : (
-    navigate("/")
-  );
+  ) : 
+    navigate("/");
 };
 
 export default ViewOne;
