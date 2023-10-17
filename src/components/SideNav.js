@@ -21,6 +21,7 @@ const SideNav = ({ authID }) => {
   );
   const paths = [
     { title: "Home", path: "/" },
+    {title:"My Matches", path:"/matches"},
     { title: "Our Play Pack", path: "/dogs" },
     { title: "Create Play Profile", path: "/add" },
     { title: "My Play Profile", path: "/profile" },

@@ -7,6 +7,7 @@ import ViewAll from "./pages/ViewAll";
 import News from "./pages/News";
 import Events from "./pages/Events";
 import ViewOne from "./pages/ViewOne";
+import Matches from "./pages/Matches";
 
 const routes = [
   {
@@ -44,8 +45,12 @@ const routes = [
       },
       {
         path: "/profile/",
-        element: <ViewOne />,
+        element: <ViewOne />
       },
+      {
+        path: "/matches",
+        element: <Matches />
+      }
     ],
   },
 ];
