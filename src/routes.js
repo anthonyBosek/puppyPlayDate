@@ -44,8 +44,8 @@ const routes = [
       },
       {
         path: "/profile/",
-        element: <ViewOne />
-      }
+        element: <ViewOne />,
+      },
     ],
   },
 ];

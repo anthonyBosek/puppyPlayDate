@@ -30,10 +30,21 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin-bottom: 20vh; */
 }
 
-li:nth-child(2) > a > span.ps-menu-icon.css-wx7wi4 > svg > path {
-  stroke: var(--med-blue);
+li:nth-child(3) > a > span.ps-menu-icon.css-wx7wi4 > svg > path {
+  stroke: var(--main-txt-color);
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 224px;
+}
+.logo img {
+  border-radius: 50%;
+  width: 90%;
 }
 
 li.ps-active,
