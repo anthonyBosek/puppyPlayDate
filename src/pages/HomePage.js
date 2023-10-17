@@ -3,7 +3,7 @@ const HomePage = () => {
   return (
     <div id="home">
       <h1>Puppy PlayDate</h1>
-      <h3>Find your dog a date!</h3>
+      <h3 id="home-h3">Embark on delightful playdates with fellow dog lovers in your area!</h3>
       <Link to="/add">
         <button className="btn-large bg-yellow larger-text">
           Let's get started!
