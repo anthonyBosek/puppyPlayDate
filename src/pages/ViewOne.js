@@ -9,6 +9,33 @@ const ViewOne = () => {
   const navigate = useNavigate();
   const [dog, setDog] = useState({});
 
+  if(!localStorage.matches){
+    localStorage.setItem("matches","[]")
+  }
+  const matches = localStorage.matches
+
+  const addMatch = (newMatchDog) =>{
+    const allDogs = JSON.parse(matches)
+    const ids = allDogs.map(doggy => doggy.id)
+    if(!(ids).includes(newMatchDog.id) && (userDog.id !== newMatchDog.id)){
+      allDogs.push(newMatchDog)
+      localStorage.setItem("matches",JSON.stringify(allDogs))
+    }else{
+      console.log("Already matched")
+    }
+  }
+
+  const removeMatch = (newMatchDog) =>{
+    const allDogs = JSON.parse(matches)
+    const ids = allDogs.map(doggy => doggy.id)
+    if(!(ids.includes(newMatchDog.id))){
+      console.log("Dog isnt matched with")
+    }else{
+      const newDogs = allDogs.filter(doggy => doggy.id !== newMatchDog.id)
+      localStorage.setItem("matches",JSON.stringify(newDogs))
+    }
+  }
+  // addMatch({name:"hello"})
   
 
   useEffect(() => {
@@ -46,12 +73,12 @@ const ViewOne = () => {
           </>
         : <>
             <Link>
-              <button className="btn-small bg-yellow larger-text" >
+              <button className="btn-small bg-yellow larger-text" onClick={() => removeMatch(dog)}>
                 <FaTimes />
               </button>
             </Link>
             <Link>
-              <button className="btn-small bg-blue larger-text">
+              <button className="btn-small bg-blue larger-text" onClick={() => addMatch(dog)}>
                 <FaBone />
               </button>
             </Link>
