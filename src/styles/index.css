@@ -77,6 +77,9 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
   cursor: pointer;
   outline: none;
 }
+.sub-tab {
+  margin-left: 2rem;
+}
 
 /* Danner */
 .all-cards,
@@ -218,7 +221,7 @@ p {
 }
 
 button,
-form input[type = "submit"] {
+form input[type="submit"] {
   border: none;
   text-decoration: none;
   margin: 1rem;
@@ -264,7 +267,9 @@ form .col-6 {
   width: 95%;
 }
 
-label, form input, textarea {
+label,
+form input,
+textarea {
   display: block;
 }
 fieldset#flex.col-2 {
