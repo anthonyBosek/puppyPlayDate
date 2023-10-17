@@ -55,9 +55,10 @@ const SideNav = ({ authID }) => {
             </div>
           )}
         </MenuItem>
+        {!isCollapsed ? 
         <span className="logo">
-          {!isCollapsed ? <img src={logo} alt="logo" /> : null}
-        </span>
+          <img src={logo} alt="logo" /> 
+        </span> : null}
         <Item
           title="Home"
           to="/"
@@ -72,7 +73,7 @@ const SideNav = ({ authID }) => {
           selected={selected}
           setSelected={setSelected}
         />
-        {authID || dog.id ? (
+        {(authID || dog.id) && !isCollapsed ? (
           <div className="sub-tab">
             <Item
               title="My Matches"
