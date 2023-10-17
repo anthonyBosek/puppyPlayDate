@@ -6,15 +6,14 @@ import { useEffect, useState } from "react";
 const ViewAll = () => {
   const { searchTerm } = useOutletContext();
   const [dogs, setDogs] = useState([]);
-  const unmatches = JSON.parse(localStorage.unmatches || "[]")
-  const blockedIds = unmatches.map(doggy => doggy.id)
+  // const unmatches = JSON.parse(localStorage.unmatches || "[]");
+  // const blockedIds = unmatches.map((doggy) => doggy.id);
 
   useEffect(() => {
     fetch("http://localhost:3005/dogs")
       .then((resp) => resp.json())
       .then(setDogs);
   }, []);
-
 
   const allDogs = dogs
     .filter((dog) => dog.name.toLowerCase().includes(searchTerm.toLowerCase()))

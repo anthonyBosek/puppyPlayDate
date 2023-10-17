@@ -8,52 +8,50 @@ const ViewOne = () => {
   const { id } = useParams() || userDog.id;
   const navigate = useNavigate();
   const [dog, setDog] = useState({});
-  let matched = false
 
   if (!localStorage.matches) {
     localStorage.setItem("matches", "[]");
   }
 
-  if(!localStorage.unmatches){
-    localStorage.setItem("unmatches","[]")
+  if (!localStorage.unmatches) {
+    localStorage.setItem("unmatches", "[]");
   }
-  
-  const matches = localStorage.matches
-  const unmatches = localStorage.unmatches
 
-  const addMatch = (newMatchDog) =>{
-    if(userDog.id){
-      const allDogs = JSON.parse(matches)
-      const ids = allDogs.map(doggy => doggy.id)
-      if(!(ids).includes(newMatchDog.id) && (userDog.id !== newMatchDog.id)){
-        allDogs.push(newMatchDog)
-        localStorage.setItem("matches",JSON.stringify(allDogs))
-      }else{
-        console.log("Already matched")
+  const matches = localStorage.matches;
+  const unmatches = localStorage.unmatches;
+
+  const addMatch = (newMatchDog) => {
+    if (userDog.id) {
+      const allDogs = JSON.parse(matches);
+      const ids = allDogs.map((doggy) => doggy.id);
+      if (!ids.includes(newMatchDog.id) && userDog.id !== newMatchDog.id) {
+        allDogs.push(newMatchDog);
+        localStorage.setItem("matches", JSON.stringify(allDogs));
+      } else {
+        console.log("Already matched");
       }
-    }else{
-      alert("Please Sign up to match with dogs")
+    } else {
+      alert("Please Sign up to match with dogs");
     }
-    
-  }
+  };
 
-  const removeMatch = (newMatchDog) =>{
-    if(userDog.id){
-      const allDogs = JSON.parse(matches)
-      const allBlockedDogs = JSON.parse(unmatches)
-      const ids = allDogs.map(doggy => doggy.id)
-      const blockedids = allBlockedDogs.map(doggy => doggy.id)
-      if(!(ids.includes(newMatchDog.id))){
-        if(!(blockedids).includes(newMatchDog.id)){
-          allBlockedDogs.push(newMatchDog)
-          localStorage.setItem("unmatches",JSON.stringify(allBlockedDogs))
+  const removeMatch = (newMatchDog) => {
+    if (userDog.id) {
+      const allDogs = JSON.parse(matches);
+      const allBlockedDogs = JSON.parse(unmatches);
+      const ids = allDogs.map((doggy) => doggy.id);
+      const blockedids = allBlockedDogs.map((doggy) => doggy.id);
+      if (!ids.includes(newMatchDog.id)) {
+        if (!blockedids.includes(newMatchDog.id)) {
+          allBlockedDogs.push(newMatchDog);
+          localStorage.setItem("unmatches", JSON.stringify(allBlockedDogs));
         }
-      }else{
-        const newDogs = allDogs.filter(doggy => doggy.id !== newMatchDog.id)
-        localStorage.setItem("matches",JSON.stringify(newDogs))
+      } else {
+        const newDogs = allDogs.filter((doggy) => doggy.id !== newMatchDog.id);
+        localStorage.setItem("matches", JSON.stringify(newDogs));
       }
-    }else{
-      alert("Please sign up first")
+    } else {
+      alert("Please sign up first");
     }
   };
 

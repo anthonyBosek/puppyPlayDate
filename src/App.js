@@ -20,7 +20,6 @@ const App = () => {
   const authUserID = (id) => setAuthID(id);
 
   const ctx = { authUserID, searchTerm };
-  // const ctx = [authUserID, searchTerm];
 
   return (
     <div className={isDark ? "app dark" : "app"}>
