@@ -221,64 +221,35 @@
       "id": 22
     },
     {
-      "owner": "Kat",
-      "name": "Ollie",
-      "breed": "Cat",
-      "age": "3",
-      "gender": "male",
-      "image": "https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2F0c3xlbnwwfHwwfHx8MA%3D%3D&w=700",
-      "bio": "testing",
+      "owner": "Danner",
+      "name": "Nox",
+      "breed": "Cane Corso",
+      "age": "2",
+      "gender": "female",
+      "image": "https://cdn.discordapp.com/attachments/569241255201079317/1163597671865520148/IMG_6463.jpeg?ex=654027c7&is=652db2c7&hm=db2d37627f0b1c8f37e3071f00d571281e3628f82ed40e7862989d0b5547fbdd&",
+      "bio": "dasdasd",
       "id": 23
     },
     {
-      "owner": "Kat",
-      "name": "Ollie",
-      "breed": "Cat",
-      "age": "3",
-      "gender": "male",
-      "image": "sfvbefdvb",
-      "bio": "owrjvnfwIOURVBO;Wurbc",
+      "owner": "Danner",
+      "name": "2",
+      "breed": "2",
+      "age": "2",
+      "gender": "female",
+      "image": "https://avatars.githubusercontent.com/u/56900960?v=4",
+      "bio": "asdasd",
       "id": 24
     },
     {
-      "owner": "Kat",
-      "name": "Ollie",
-      "breed": "Cat",
-      "age": "3",
-      "gender": "male",
-      "image": "https://cdn.discordapp.com/attachments/1101217794336501760/1164211443185496094/20230312_193417.jpg?ex=65426366&is=652fee66&hm=8b946076700d9c7a669cc73a44a16f92a71152c626e6e5ef6c432a52fe51fc87&",
-      "bio": "testing",
+      "owner": "Danner",
+      "name": "2",
+      "breed": "2",
+      "age": "2",
+      "gender": "female",
+      "image": "https://avatars.githubusercontent.com/u/56900960?v=4",
+      "bio": "asdsdasd",
+      "password": "$2a$10$x2..gt8BuGhTcvQvJJgDM.6yNXHKPu7ONlq8EIK9WL1ObZlxr/h9C",
       "id": 25
-    },
-    {
-      "owner": "Kat",
-      "name": "Ollie",
-      "breed": "Cat",
-      "age": "3",
-      "gender": "male",
-      "image": "https://cdn.discordapp.com/attachments/1101217794336501760/1164211443185496094/20230312_193417.jpg?ex=65426366&is=652fee66&hm=8b946076700d9c7a669cc73a44a16f92a71152c626e6e5ef6c432a52fe51fc87&",
-      "bio": "eafbsrgntshn",
-      "id": 26
-    },
-    {
-      "owner": "Kat",
-      "name": "Ollie",
-      "breed": "Cat",
-      "age": "3",
-      "gender": "male",
-      "image": "https://cdn.discordapp.com/attachments/1101217794336501760/1164211443185496094/20230312_193417.jpg?ex=65426366&is=652fee66&hm=8b946076700d9c7a669cc73a44a16f92a71152c626e6e5ef6c432a52fe51fc87&",
-      "bio": "egfbnrgbn",
-      "id": 27
-    },
-    {
-      "owner": "Kat",
-      "name": "Ollie",
-      "breed": "Cat",
-      "age": "3",
-      "gender": "male",
-      "image": "https://cdn.discordapp.com/attachments/1101217794336501760/1164211443185496094/20230312_193417.jpg?ex=65426366&is=652fee66&hm=8b946076700d9c7a669cc73a44a16f92a71152c626e6e5ef6c432a52fe51fc87&",
-      "bio": "lwjrbfhvlaerihfb",
-      "id": 28
     }
   ]
 }
