@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate, useOutletContext } from "react-router-dom";
 import { GiMale, GiFemale } from "react-icons/gi";
 import { FaBone, FaTimes } from "react-icons/fa";
 
 const ViewOne = () => {
+  const { setAlertMessage, handleSnackType } = useOutletContext();
   const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
   const { id } = useParams() || userDog.id;
   const navigate = useNavigate();
@@ -27,13 +28,15 @@ const ViewOne = () => {
       if (!ids.includes(newMatchDog.id) && userDog.id !== newMatchDog.id) {
         allDogs.push(newMatchDog);
         localStorage.setItem("matches", JSON.stringify(allDogs));
+        handleSnackType("success");
+        setAlertMessage("It's a match!");
       } else {
-        // snackbar
-        console.log("Already matched");
+        handleSnackType("warning");
+        setAlertMessage("Already matched");
       }
     } else {
-      // snackbar
-      alert("Please Sign up to match with dogs");
+      handleSnackType("warning");
+      setAlertMessage("Please Sign up to match with dogs");
     }
   };
 
@@ -47,14 +50,16 @@ const ViewOne = () => {
         if (!blockedids.includes(newMatchDog.id)) {
           allBlockedDogs.push(newMatchDog);
           localStorage.setItem("unmatches", JSON.stringify(allBlockedDogs));
+          handleSnackType("success");
+          setAlertMessage("We'll let them down easy");
         }
       } else {
         const newDogs = allDogs.filter((doggy) => doggy.id !== newMatchDog.id);
         localStorage.setItem("matches", JSON.stringify(newDogs));
       }
     } else {
-      // snackbar
-      alert("Please sign up first");
+      handleSnackType("warning");
+      setAlertMessage("Please sign up first");
     }
   };
 
@@ -63,7 +68,10 @@ const ViewOne = () => {
       fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
         .then((resp) => (resp.status === 200 || 304 ? resp.json() : false))
         .then(setDog)
-        .catch(alert);
+        .catch(err => {
+          handleSnackType("error");
+          setAlertMessage(err.message);
+        });
     };
     getDogData();
   }, [id, userDog.id]);
