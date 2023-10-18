@@ -1,6 +1,10 @@
+import { useNavigate, useOutletContext } from "react-router-dom";
 import Card from "../components/Card";
+import { useEffect } from "react";
 
 const Matches = () => {
+  const { setAlertMessage, handleSnackType } = useOutletContext();
+  const navigate = useNavigate();
   const matches = JSON.parse(localStorage.matches || "[]");
   const userDog = JSON.parse(localStorage.dog || "{}");
 
@@ -8,15 +12,20 @@ const Matches = () => {
     return <Card key={match.id} dog={match} />;
   });
 
+  useEffect(() => {
+    if(!userDog.id) {
+      handleSnackType("error");
+      setAlertMessage("You Must Sign Up To Access This Page");
+      navigate("/add")
+    }
+  }, [userDog.id]) 
+
   return userDog.id ? (
     <div className="view-all">
       <h1>My matches</h1>
       <div className="all-cards">{allMatches}</div>
     </div>
-  ) : (
-    // snackbar
-    <h1>You Must Sign Up To Access This Page</h1>
-  );
+  ) : null;
 };
 
 export default Matches;

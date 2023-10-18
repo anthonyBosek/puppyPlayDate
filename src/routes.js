@@ -26,7 +26,7 @@ const routes = [
         element: <Add />,
       },
       {
-        path: "/edit/:id",
+        path: "/profile/edit",
         element: <Edit />,
       },
       {

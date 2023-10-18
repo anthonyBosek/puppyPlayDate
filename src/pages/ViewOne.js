@@ -88,18 +88,20 @@ const ViewOne = () => {
         });
     };
     getDogData();
-  }, [id, userDog.id]);
+  }, [id, userDog.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const deleteProfile = (dog) => {
-    fetch(`http://localhost:3005/dogs/${dog.id}`, {
+    fetch(`http://localhost:3005/dogs/${id || dog.id}`, {
       method: "DELETE"
     })
     .then(() => {
       localStorage.removeItem("dog");
+      localStorage.removeItem("matches");
       handleSnackType("warning");
       setAlertMessage("Profile deleted");
       navigate("/add");
       handleDeleteDog(dog);
+      // authUserID(null)
     })
     .catch(err => {
       handleSnackType("error");
@@ -131,7 +133,7 @@ const ViewOne = () => {
             >
               Delete
             </button>
-            <Link to={`/edit/${id || userDog.id}`}>
+            <Link to={`/profile/edit/`}>
               <button className="btn-small bg-blue larger-text">Edit</button>
             </Link>
           </>
