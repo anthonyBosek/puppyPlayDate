@@ -55,10 +55,11 @@ const SideNav = ({ authID }) => {
             </div>
           )}
         </MenuItem>
-        {!isCollapsed ? 
-        <span className="logo">
-          <img src={logo} alt="logo" /> 
-        </span> : null}
+        {!isCollapsed ? (
+          <span className="logo">
+            <img src={logo} alt="logo" />
+          </span>
+        ) : null}
         <Item
           title="Home"
           to="/"

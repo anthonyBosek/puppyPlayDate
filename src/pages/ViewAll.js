@@ -4,22 +4,26 @@ import { useEffect, useState } from "react";
 
 const ViewAll = () => {
   const { searchTerm, setAlertMessage, handleSnackType } = useOutletContext();
-  const [dogs, setDogs] = useState([]);
   const unmatches = JSON.parse(localStorage.unmatches || "[]");
   const blockedIds = unmatches.map((doggy) => doggy.id);
+  const [dogs, setDogs] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3005/dogs")
       .then((resp) => resp.json())
       .then(setDogs)
-      .catch(err => {
-        handleSnackType("error")
-        setAlertMessage(err.message)
-      })
-  }, []);
+      .catch((err) => {
+        handleSnackType("error");
+        setAlertMessage(err.message);
+      });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const allDogs = dogs
-    .filter((dog) => dog.name.toLowerCase().includes(searchTerm.toLowerCase()) && !(blockedIds.includes(dog.id)))
+    .filter(
+      (dog) =>
+        dog.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        !blockedIds.includes(dog.id)
+    )
     .map((dog) => <Card key={dog.id} dog={dog} />);
 
   return (

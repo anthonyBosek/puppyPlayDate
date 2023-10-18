@@ -28,9 +28,11 @@ const ViewOne = () => {
         allDogs.push(newMatchDog);
         localStorage.setItem("matches", JSON.stringify(allDogs));
       } else {
+        // snackbar
         console.log("Already matched");
       }
     } else {
+      // snackbar
       alert("Please Sign up to match with dogs");
     }
   };
@@ -51,6 +53,7 @@ const ViewOne = () => {
         localStorage.setItem("matches", JSON.stringify(newDogs));
       }
     } else {
+      // snackbar
       alert("Please sign up first");
     }
   };

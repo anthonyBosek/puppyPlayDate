@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { object, string, number } from "yup";
+import { object, string } from "yup";
 import { useOutletContext } from "react-router-dom";
 
 const URL = "http://localhost:3005/dogs";
@@ -29,12 +29,15 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
   const [formData, setFormData] = useState(initialValue);
 
   useEffect(() => {
-    if (selectedDogId) {
-      fetch(`${URL}/${selectedDogId}`)
-        .then((resp) => resp.json())
-        .then(setFormData)
-        .catch((err) => alert(err));
-    }
+    const getFormData = () => {
+      if (selectedDogId) {
+        fetch(`${URL}/${selectedDogId}`)
+          .then((resp) => resp.json())
+          .then(setFormData)
+          .catch((err) => alert(err));
+      }
+    };
+    getFormData();
   }, [selectedDogId]);
 
   const handleChange = (e) => {
@@ -44,7 +47,6 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const url = `${URL}/${selectedDogId || ""}`;
     const method = selectedDogId ? "PATCH" : "POST";
 
@@ -64,19 +66,19 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
               onEditDog(dogData);
             } else {
               onAddDog(dogData);
-              handleSnackType("success")
-              setAlertMessage("You're all set!")
+              handleSnackType("success");
+              setAlertMessage("You're all set!");
             }
             setFormData(initialValue);
           })
           .catch((err) => {
-            handleSnackType("error")
-            setAlertMessage(err.message)
+            handleSnackType("error");
+            setAlertMessage(err.message);
           });
       })
       .catch((err) => {
-        handleSnackType("error")
-        setAlertMessage(err.message)
+        handleSnackType("error");
+        setAlertMessage(err.message);
       });
   };
 
