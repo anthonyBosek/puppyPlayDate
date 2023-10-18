@@ -1,10 +1,9 @@
 import { useOutletContext } from "react-router-dom";
 import Card from "../components/Card";
 import { useEffect, useState } from "react";
-// import { useOutletContext } from "react-router-dom";
 
 const ViewAll = () => {
-  const { searchTerm } = useOutletContext();
+  const { searchTerm, setAlertMessage, handleSnackType } = useOutletContext();
   const [dogs, setDogs] = useState([]);
   const unmatches = JSON.parse(localStorage.unmatches || "[]");
   const blockedIds = unmatches.map((doggy) => doggy.id);
@@ -12,7 +11,11 @@ const ViewAll = () => {
   useEffect(() => {
     fetch("http://localhost:3005/dogs")
       .then((resp) => resp.json())
-      .then(setDogs);
+      .then(setDogs)
+      .catch(err => {
+        handleSnackType("error")
+        setAlertMessage(err.message)
+      })
   }, []);
 
   const allDogs = dogs

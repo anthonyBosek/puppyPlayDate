@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
+import { object, string, number } from "yup";
+import { useOutletContext } from "react-router-dom";
 
 const URL = "http://localhost:3005/dogs";
+
 const initialValue = {
   owner: "",
   name: "",
@@ -11,13 +14,19 @@ const initialValue = {
   bio: "",
 };
 
-const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
-  const [formData, setFormData] = useState(initialValue);
+const formSchema = object().shape({
+  owner: string().required("Owner name is required"),
+  name: string().required("Pet name is required"),
+  breed: string().required("Breed is required"),
+  age: string().required("Age is required"),
+  gender: string().required("Gender is required"),
+  image: string().required("Image is required"),
+  bio: string().required("Bio is required"),
+});
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
+  const { setAlertMessage, handleSnackType } = useOutletContext();
+  const [formData, setFormData] = useState(initialValue);
 
   useEffect(() => {
     if (selectedDogId) {
@@ -28,29 +37,47 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
     }
   }, [selectedDogId]);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const url = `${URL}/${selectedDogId || ""}`;
     const method = selectedDogId ? "PATCH" : "POST";
 
-    fetch(url, {
-      method,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((resp) => resp.json())
-      .then((dogData) => {
-        if (selectedDogId) {
-          onEditDog(dogData);
-        } else {
-          onAddDog(dogData);
-        }
-        setFormData(initialValue);
+    formSchema
+      .validate(formData)
+      .then((validData) => {
+        fetch(url, {
+          method,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(validData),
+        })
+          .then((resp) => resp.json())
+          .then((dogData) => {
+            if (selectedDogId) {
+              onEditDog(dogData);
+            } else {
+              onAddDog(dogData);
+              handleSnackType("success")
+              setAlertMessage("You're all set!")
+            }
+            setFormData(initialValue);
+          })
+          .catch((err) => {
+            handleSnackType("error")
+            setAlertMessage(err.message)
+          });
       })
-      .catch((err) => alert(err));
+      .catch((err) => {
+        handleSnackType("error")
+        setAlertMessage(err.message)
+      });
   };
 
   return (
