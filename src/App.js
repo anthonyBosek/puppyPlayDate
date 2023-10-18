@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import TopNav from "./components/TopNav";
 import SideNav from "./components/SideNav";
@@ -10,11 +10,33 @@ const App = () => {
   const [authID, setAuthID] = useState(null);
   const [message, setMessage] = useState(null);
   const [snackType, setSnackType] = useState("");
+  const [dogs, setDogs] = useState([]);
 
   const toggleDarkMode = () => {
     setIsDark(!isDark);
     localStorage.setItem("dark", !isDark);
   };
+
+  useEffect(() => {
+    fetch("http://localhost:3005/dogs")
+      .then((resp) => resp.json())
+      .then(setDogs)
+      .catch((err) => {
+        handleSnackType("error");
+        setAlertMessage(err.message);
+      });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const handleAddDog = (newDog) => {
+    const updatedDogs = [...dogs, newDog]
+    setDogs(updatedDogs)
+  }
+
+  const handleDeleteDog = (oldDog) => {
+    const updatedDogs = dogs.filter(dog => dog.id !== oldDog.id)
+    setDogs(updatedDogs)
+    setAuthID(null)
+  }
 
   const newSearch = (e) => setSearchTerm(e.target.value);
 
@@ -24,7 +46,7 @@ const App = () => {
 
   const handleSnackType = (type) => setSnackType(type);
 
-  const ctx = { searchTerm, authUserID, setAlertMessage, handleSnackType };
+  const ctx = { dogs, searchTerm, authUserID, setAlertMessage, handleSnackType, handleAddDog, handleDeleteDog };
 
   return (
     <div className={isDark ? "app dark" : "app"}>

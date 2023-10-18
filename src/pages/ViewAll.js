@@ -1,27 +1,16 @@
 import { useOutletContext } from "react-router-dom";
 import Card from "../components/Card";
-import { useEffect, useState } from "react";
 
 const ViewAll = () => {
-  const { searchTerm, setAlertMessage, handleSnackType } = useOutletContext();
+  const { dogs, searchTerm } = useOutletContext();
   const unmatches = JSON.parse(localStorage.unmatches || "[]");
   const blockedIds = unmatches.map((doggy) => doggy.id);
-  const [dogs, setDogs] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3005/dogs")
-      .then((resp) => resp.json())
-      .then(setDogs)
-      .catch((err) => {
-        handleSnackType("error");
-        setAlertMessage(err.message);
-      });
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const allDogs = dogs
     .filter(
       (dog) =>
-        dog.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        (dog.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        dog.bio.toLowerCase().includes(searchTerm.toLowerCase())) &&
         !blockedIds.includes(dog.id)
     )
     .map((dog) => <Card key={dog.id} dog={dog} />);
