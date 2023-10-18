@@ -65,7 +65,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
           .then((dogData) => {
             if (selectedDogId) {
               onEditDog(dogData);
-              navigate("/profile")
+              navigate("/profile");
             } else {
               onAddDog(dogData);
               handleSnackType("success");
