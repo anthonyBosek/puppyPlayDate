@@ -27,6 +27,8 @@ const formSchema = object().shape({
   password: string().required("Password is required")
 });
 
+
+
 const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
   const navigate = useNavigate();
   const { setAlertMessage, handleSnackType } = useOutletContext();
@@ -43,6 +45,22 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
     };
     getFormData();
   }, [selectedDogId]);
+
+  const checkForReusedPass = async (pass) => {
+    const resp = await fetch("http://localhost:3005/dogs");
+    const data = await resp.json();
+    let reused = true
+    for (const dog of data) {
+      if (dog.password) {
+        const success = await bcrypt.compare(pass, dog.password);
+        if(success){
+          reused = false
+          break
+        }
+      }
+    }
+    return reused
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,32 +83,39 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
           }
         });
       });
-  
+      
       const processedForm = { ...validData, password: hash };
-  
-      fetch(url, {
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(processedForm),
+      checkForReusedPass(validData.password).then(result =>{
+        if(result){
+          fetch(url, {
+            method,
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(processedForm),
+          })
+            .then((resp) => resp.json())
+            .then((dogData) => {
+              if (selectedDogId) {
+                onEditDog(dogData);
+                navigate("/profile");
+              } else {
+                onAddDog(dogData);
+                handleSnackType("success");
+                setAlertMessage("You're all set!");
+              }
+              setFormData(initialValue);
+            })
+            .catch((err) => {
+              handleSnackType("error");
+              setAlertMessage(err.message);
+            });
+        }else{
+          console.log("a user already has that password")
+        }
       })
-        .then((resp) => resp.json())
-        .then((dogData) => {
-          if (selectedDogId) {
-            onEditDog(dogData);
-            navigate("/profile");
-          } else {
-            onAddDog(dogData);
-            handleSnackType("success");
-            setAlertMessage("You're all set!");
-          }
-          setFormData(initialValue);
-        })
-        .catch((err) => {
-          handleSnackType("error");
-          setAlertMessage(err.message);
-        });
+      
+      
     } catch (err) {
       handleSnackType("error");
       setAlertMessage(err.message);
