@@ -29,6 +29,7 @@ const SideNav = ({ authID }) => {
     { title: "My Play Profile", path: "/edit" },
     { title: "Play Events", path: "/events" },
     { title: "Play News", path: "/news" },
+    { title: "Log In", path: "/login"}
   ];
 
   const [selected, setSelected] = useState(
@@ -110,6 +111,21 @@ const SideNav = ({ authID }) => {
           selected={selected}
           setSelected={setSelected}
         />
+        {authID || dog.id ?
+        <Item
+          title="Log Out"
+          to="/"
+          icon={<FaRegCreditCard />}
+          selected={selected}
+          logOut={true}
+          setSelected={setSelected}
+        />:<Item
+          title="Log In"
+          to="/login"
+          icon={<FaRegCreditCard />}
+          selected={selected}
+          setSelected={setSelected}
+        />}
       </Menu>
     </Sidebar>
   );

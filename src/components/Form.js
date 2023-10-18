@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { object, string } from "yup";
 import { useOutletContext, useNavigate } from "react-router-dom";
+import bcrypt from 'bcryptjs'
+
+console.log(bcrypt)
 
 const URL = "http://localhost:3005/dogs";
 
@@ -12,6 +15,7 @@ const initialValue = {
   gender: "",
   image: "",
   bio: "",
+  password: ""
 };
 
 const formSchema = object().shape({
@@ -22,6 +26,7 @@ const formSchema = object().shape({
   gender: string().required("Gender is required"),
   image: string().required("Image is required"),
   bio: string().required("Bio is required"),
+  password: string().required("Password is required")
 });
 
 const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
@@ -46,44 +51,54 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const url = `${URL}/${selectedDogId || ""}`;
     const method = selectedDogId ? "PATCH" : "POST";
-
-    formSchema
-      .validate(formData)
-      .then((validData) => {
-        fetch(url, {
-          method,
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(validData),
-        })
-          .then((resp) => resp.json())
-          .then((dogData) => {
-            if (selectedDogId) {
-              onEditDog(dogData);
-              navigate("/profile");
-            } else {
-              onAddDog(dogData);
-              handleSnackType("success");
-              setAlertMessage("You're all set!");
-            }
-            setFormData(initialValue);
-          })
-          .catch((err) => {
-            handleSnackType("error");
-            setAlertMessage(err.message);
-          });
-      })
-      .catch((err) => {
-        handleSnackType("error");
-        setAlertMessage(err.message);
+  
+    try {
+      const validData = await formSchema.validate(formData);
+      const hash = await new Promise((resolve, reject) => {
+        bcrypt.hash(validData.password, 10, (err, hash) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(hash);
+          }
+        });
       });
+  
+      const processedForm = { ...validData, password: hash };
+  
+      fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(processedForm),
+      })
+        .then((resp) => resp.json())
+        .then((dogData) => {
+          if (selectedDogId) {
+            onEditDog(dogData);
+            navigate("/profile");
+          } else {
+            onAddDog(dogData);
+            handleSnackType("success");
+            setAlertMessage("You're all set!");
+          }
+          setFormData(initialValue);
+        })
+        .catch((err) => {
+          handleSnackType("error");
+          setAlertMessage(err.message);
+        });
+    } catch (err) {
+      handleSnackType("error");
+      setAlertMessage(err.message);
+    }
   };
-
+  
   return (
     <div>
       <div className="form-div">
@@ -174,6 +189,16 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
               name="bio"
               id="bio"
               value={formData.bio}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label htmlFor="password" className="col-6">
+            Password
+            <input
+              name="password"
+              id="password"
+              value={formData.password}
               onChange={handleChange}
             />
           </label>
