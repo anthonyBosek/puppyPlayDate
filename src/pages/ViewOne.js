@@ -56,6 +56,8 @@ const ViewOne = () => {
       } else {
         const newDogs = allDogs.filter((doggy) => doggy.id !== newMatchDog.id);
         localStorage.setItem("matches", JSON.stringify(newDogs));
+        handleSnackType("success");
+        setAlertMessage("We'll let them down easy");
       }
     } else {
       handleSnackType("warning");
@@ -106,6 +108,8 @@ const ViewOne = () => {
               className="btn-small bg-yellow larger-text"
               onClick={() => {
                 localStorage.removeItem("dog");
+                handleSnackType("warning");
+                setAlertMessage("Profile deleted");
                 navigate("/add");
               }}
             >
