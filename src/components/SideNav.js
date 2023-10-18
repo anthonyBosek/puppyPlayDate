@@ -4,12 +4,12 @@ import { useLocation } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import { GrHome } from "react-icons/gr";
 import { GiSittingDog } from "react-icons/gi";
-import { FaDog, FaRegUser, FaRegNewspaper } from "react-icons/fa6";
+import { FaDog, FaRegUser, FaRegNewspaper,FaRegCreditCard } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 import { BiCalendar } from "react-icons/bi";
 import Item from "./NavItem";
 
-const SideNav = ({ authID }) => {
+const SideNav = () => {
   const dog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
   const [isCollapsed, setIsCollapsed] = useState(
     window.innerWidth > 768 ? false : true
@@ -70,13 +70,13 @@ const SideNav = ({ authID }) => {
           setSelected={setSelected}
         />
         <Item
-          title={authID || dog.id ? "My Play Profile" : "Create Play Profile"}
-          to={authID || dog.id ? "/profile" : "/add"}
+          title={dog.id ? "My Play Profile" : "Create Play Profile"}
+          to={dog.id ? "/profile" : "/add"}
           icon={<FaRegUser />}
           selected={selected}
           setSelected={setSelected}
         />
-        {authID || dog.id ? (
+        {dog.id ? (
           <Item
             title="My Matches"
             to="/matches"
@@ -111,7 +111,7 @@ const SideNav = ({ authID }) => {
           selected={selected}
           setSelected={setSelected}
         />
-        {authID || dog.id ?
+        {dog.id ?
         <Item
           title="Log Out"
           to="/"

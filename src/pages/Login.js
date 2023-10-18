@@ -32,7 +32,7 @@ const Login = () =>{
                 if(err){
                     console.log("Error hashing password")
                 }else if(hash){
-                    console.log(hash)
+                    // console.log(hash)
                     allDogs.forEach(dog => {
                         if(dog.password){
                             bcrypt.compare(pass,dog.password,(error,result)=>{
