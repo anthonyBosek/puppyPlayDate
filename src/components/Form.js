@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { object, string } from "yup";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 
 const URL = "http://localhost:3005/dogs";
 
@@ -25,6 +25,7 @@ const formSchema = object().shape({
 });
 
 const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
+  const navigate = useNavigate();
   const { setAlertMessage, handleSnackType } = useOutletContext();
   const [formData, setFormData] = useState(initialValue);
 
@@ -64,6 +65,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
           .then((dogData) => {
             if (selectedDogId) {
               onEditDog(dogData);
+              navigate("/profile")
             } else {
               onAddDog(dogData);
               handleSnackType("success");

@@ -36,7 +36,7 @@ const ViewOne = () => {
       }
     } else {
       handleSnackType("warning");
-      setAlertMessage("Please Sign up to match with dogs");
+      setAlertMessage("Please Sign up to interact with dogs");
     }
   };
 
@@ -59,7 +59,7 @@ const ViewOne = () => {
       }
     } else {
       handleSnackType("warning");
-      setAlertMessage("Please sign up first");
+      setAlertMessage("Please Sign up to interact with dogs");
     }
   };
 
@@ -103,7 +103,7 @@ const ViewOne = () => {
             >
               Delete
             </button>
-            <Link to={`/edit/${id}`}>
+            <Link to={`/edit/${id || userDog.id}`}>
               <button className="btn-small bg-blue larger-text">Edit</button>
             </Link>
           </>
