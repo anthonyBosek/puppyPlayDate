@@ -3,7 +3,7 @@ import { object, string } from "yup";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import bcrypt from 'bcryptjs'
 
-console.log(bcrypt)
+// console.log(bcrypt)
 
 const URL = "http://localhost:3005/dogs";
 
@@ -194,8 +194,9 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
           </label>
 
           <label htmlFor="password" className="col-6">
-            Password
+            Password:
             <input
+              type="password"
               name="password"
               id="password"
               value={formData.password}

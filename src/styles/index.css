@@ -301,9 +301,22 @@ textarea {
   padding: 0.25rem;
   margin: 0.5rem 0;
 }
+form input[type="password"] {
+  width: 30%;
+  padding: 0.25rem;
+  margin: 0.5rem 0;
+}
 
 textarea {
   height: 75px;
   padding: 0.25rem;
   margin: 0.5rem 0;
+}
+
+#login {
+  width: 300px;
+  padding: 2rem;
+}
+#login input {
+  width: 100%;
 }

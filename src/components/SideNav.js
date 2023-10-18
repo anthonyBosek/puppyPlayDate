@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import { GrHome } from "react-icons/gr";
 import { GiSittingDog } from "react-icons/gi";
-import { FaDog, FaRegUser, FaRegNewspaper } from "react-icons/fa6";
+import { FaDog, FaRegUser, FaRegNewspaper, FaRegCreditCard } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 import { BiCalendar } from "react-icons/bi";
 import Item from "./NavItem";

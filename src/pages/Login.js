@@ -1,10 +1,11 @@
 import bcrypt from "bcryptjs"
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useOutletContext } from "react-router-dom"
 
 const Login = () =>{
-    const [allDogs,setAllDogs] = useState([])
-    const [pass,setPass] = useState("")
+    const { setAlertMessage, handleSnackType } = useOutletContext();
+    const [allDogs, setAllDogs] = useState([])
+    const [pass, setPass] = useState("")
     const navigate = useNavigate()
 
     useEffect(()=>{
@@ -24,22 +25,26 @@ const Login = () =>{
     const handleLogin = (dog) =>{
         localStorage.setItem("dog",JSON.stringify(dog))
         navigate("/profile")
+        handleSnackType("success");
+        setAlertMessage("Welcome back!");
     }
 
     const findUser = () =>{
         if(pass){
             bcrypt.hash(pass,10,(err,hash)=>{
                 if(err){
-                    console.log("Error hashing password")
+                    handleSnackType("error");
+                    setAlertMessage("Error hashing password");
                 }else if(hash){
-                    console.log(hash)
+                    // console.log(hash)
                     allDogs.forEach(dog => {
                         if(dog.password){
                             bcrypt.compare(pass,dog.password,(error,result)=>{
                                 if(result){
                                     handleLogin(dog)
                                 }else{
-                                    console.log("No users with that password")
+                                    handleSnackType("error");
+                                    setAlertMessage("No users with that password");
                                 }
                             })
                         }
@@ -47,22 +52,29 @@ const Login = () =>{
                 }
             })
         }else{
-            console.log("Please enter a password")
+            handleSnackType("error");
+            setAlertMessage("Please enter a password");
         }
-        
         // const user = allDogs.find(dog => dog.password)
     }
 
     
     return(
         <>
-        <h1>Login</h1>
-        <input
-        type="text"
-        value={pass}
-        onChange={updatePass}
-        />
-        <button onClick={handleClick}>Log In</button>
+            <h1>Login</h1>
+            <form id="login">
+                <label htmlFor="password" className="col-6">
+                Password:
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        value={pass}
+                        onChange={updatePass}
+                    />
+                    </label>
+                <button onClick={handleClick} className="btn-small bg-yellow larger-text">Log In</button>
+            </form>
         </>
     )
 }
