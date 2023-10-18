@@ -1,5 +1,5 @@
-import { useEffect, useState, useOutletContext } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, useOutletContext } from "react-router-dom";
 import Form from "../components/Form";
 
 const Edit = () => {
@@ -25,7 +25,6 @@ const Edit = () => {
 
   return (
     <div>
-      {console.log(selectDog)}
       <h1>Edit User Data</h1>
       <Form selectedDogId={selectDog.id} onEditDog={onEditDog} />
     </div>
