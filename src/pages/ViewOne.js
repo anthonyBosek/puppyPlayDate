@@ -10,7 +10,6 @@ import { FaBone, FaTimes } from "react-icons/fa";
 
 const ViewOne = () => {
   const { setAlertMessage, handleSnackType, handleDeleteDog } = useOutletContext();
-  // console.log(authUserID)
   const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
   const { id } = useParams() || userDog.id;
   const navigate = useNavigate();
@@ -89,7 +88,7 @@ const ViewOne = () => {
         });
     };
     getDogData();
-  }, [id, userDog.id]);
+  }, [id, userDog.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const deleteProfile = (dog) => {
     fetch(`http://localhost:3005/dogs/${id || dog.id}`, {
@@ -97,6 +96,7 @@ const ViewOne = () => {
     })
     .then(() => {
       localStorage.removeItem("dog");
+      localStorage.removeItem("matches");
       handleSnackType("warning");
       setAlertMessage("Profile deleted");
       navigate("/add");
