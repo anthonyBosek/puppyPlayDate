@@ -229,27 +229,6 @@
       "image": "https://cdn.discordapp.com/attachments/569241255201079317/1163597671865520148/IMG_6463.jpeg?ex=654027c7&is=652db2c7&hm=db2d37627f0b1c8f37e3071f00d571281e3628f82ed40e7862989d0b5547fbdd&",
       "bio": "dasdasd",
       "id": 23
-    },
-    {
-      "owner": "Danner",
-      "name": "2",
-      "breed": "2",
-      "age": "2",
-      "gender": "female",
-      "image": "https://avatars.githubusercontent.com/u/56900960?v=4",
-      "bio": "asdasd",
-      "id": 24
-    },
-    {
-      "owner": "Danner",
-      "name": "monkey man",
-      "breed": "Cane Corso",
-      "age": "1231231231231",
-      "gender": "female",
-      "image": "https://cdn.discordapp.com/attachments/569241255201079317/1163597671865520148/IMG_6463.jpeg?ex=654027c7&is=652db2c7&hm=db2d37627f0b1c8f37e3071f00d571281e3628f82ed40e7862989d0b5547fbdd&",
-      "bio": "asdasdas",
-      "password": "$2a$10$94ZeB0HH72XcATPmhplmJ.zlhsu3dDJQdk3Zt/FPWRUgkorXfXrum",
-      "id": 25
     }
   ]
 }
