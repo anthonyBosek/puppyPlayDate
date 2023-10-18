@@ -33,7 +33,7 @@ body,
 }
 
 li:nth-child(3) > a > span.ps-menu-icon.css-wx7wi4 > svg > path {
-  stroke: var(--main-txt-color);
+  stroke: var(--med-blue);
 }
 .logo {
   display: flex;
@@ -87,9 +87,9 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
   cursor: pointer;
   outline: none;
 }
-.sub-tab {
-  margin-left: 2rem;
-}
+/* #root > div > aside > div > nav > ul > li:nth-child(5) > a {
+  padding-left: 3rem;
+} */
 
 /* Danner */
 .all-cards,

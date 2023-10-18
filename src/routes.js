@@ -8,6 +8,7 @@ import News from "./pages/News";
 import Events from "./pages/Events";
 import ViewOne from "./pages/ViewOne";
 import Matches from "./pages/Matches";
+import Login from "./pages/Login";
 
 const routes = [
   {
@@ -52,6 +53,10 @@ const routes = [
         path: "/matches",
         element: <Matches />,
       },
+      {
+        path: "/login",
+        element: <Login />
+      }
     ],
   },
 ];

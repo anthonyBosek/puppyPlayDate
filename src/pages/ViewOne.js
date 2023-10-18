@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, useNavigate, useOutletContext } from "react-router-dom";
+import {
+  Link,
+  useParams,
+  useNavigate,
+  useOutletContext,
+} from "react-router-dom";
 import { GiMale, GiFemale } from "react-icons/gi";
 import { FaBone, FaTimes } from "react-icons/fa";
 
@@ -67,18 +72,17 @@ const ViewOne = () => {
 
   useEffect(() => {
     const getDogData = () => {
-
       fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
         .then((resp) => {
           if (resp.ok) {
-            return resp.json()
-          } else{
-            navigate("/")
+            return resp.json();
+          } else {
+            navigate("/");
           }
         })
 
         .then(setDog)
-        .catch(err => {
+        .catch((err) => {
           handleSnackType("error");
           setAlertMessage(err.message);
         });
@@ -153,7 +157,7 @@ const ViewOne = () => {
         )}
       </div>
     </div>
-  )
+  );
 };
 
 export default ViewOne;

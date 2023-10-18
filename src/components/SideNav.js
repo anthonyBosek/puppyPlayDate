@@ -3,7 +3,7 @@ import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { useLocation } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import { GrHome } from "react-icons/gr";
-import { GiJumpingDog } from "react-icons/gi";
+import { GiSittingDog } from "react-icons/gi";
 import { FaDog, FaRegUser, FaRegNewspaper } from "react-icons/fa6";
 import { IoMenuOutline } from "react-icons/io5";
 import { BiCalendar } from "react-icons/bi";
@@ -29,6 +29,7 @@ const SideNav = ({ authID }) => {
     { title: "My Play Profile", path: "/edit" },
     { title: "Play Events", path: "/events" },
     { title: "Play News", path: "/news" },
+    { title: "Log In", path: "/login"}
   ];
 
   const [selected, setSelected] = useState(
@@ -56,11 +57,11 @@ const SideNav = ({ authID }) => {
             </div>
           )}
         </MenuItem>
-        {!isCollapsed ? (
-          <span className="logo">
-            <img src={logo} alt="logo" />
-          </span>
-        ) : null}
+
+        <span className="logo">
+          {!isCollapsed ? <img src={logo} alt="logo" /> : null}
+        </span>
+
         <Item
           title="Home"
           to="/"
@@ -75,16 +76,19 @@ const SideNav = ({ authID }) => {
           selected={selected}
           setSelected={setSelected}
         />
-        {(authID || dog.id) && !isCollapsed ? (
-          <div className="sub-tab">
-            <Item
-              title="My Matches"
-              to="/matches"
-              icon={<GiJumpingDog />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-          </div>
+        {authID || dog.id ? (
+          <Item
+            title="My Matches"
+            to="/matches"
+            icon={
+              <>
+                <GiSittingDog />
+                <GiSittingDog />
+              </>
+            }
+            selected={selected}
+            setSelected={setSelected}
+          />
         ) : null}
         <Item
           title="Our Play Pack"
@@ -107,6 +111,21 @@ const SideNav = ({ authID }) => {
           selected={selected}
           setSelected={setSelected}
         />
+        {authID || dog.id ?
+        <Item
+          title="Log Out"
+          to="/"
+          icon={<FaRegCreditCard />}
+          selected={selected}
+          logOut={true}
+          setSelected={setSelected}
+        />:<Item
+          title="Log In"
+          to="/login"
+          icon={<FaRegCreditCard />}
+          selected={selected}
+          setSelected={setSelected}
+        />}
       </Menu>
     </Sidebar>
   );
