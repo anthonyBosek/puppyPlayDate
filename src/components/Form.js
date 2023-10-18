@@ -3,8 +3,6 @@ import { object, string, number } from "yup";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import bcrypt from 'bcryptjs'
 
-
-
 const URL = "http://localhost:3005/dogs";
 
 const initialValue = {
@@ -22,14 +20,12 @@ const formSchema = object().shape({
   owner: string().required("Owner name is required"),
   name: string().required("Pet name is required"),
   breed: string().required("Breed is required"),
-  age: number().min(0).max(31).required("Age is required"),
+  age: number().min(0, "Not a valid age").max(35, "Not a valid age").required("Age is required"),
   gender: string().required("Gender is required"),
   image: string().required("Image is required"),
   bio: string().required("Bio is required"),
-  password: string().min(4,"Your password must be at least 4 characters long").required("Password is required")
+  password: string().min(4,"Password must be at least 4 characters long").required("Password is required")
 });
-
-
 
 const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
   const navigate = useNavigate();
@@ -42,11 +38,14 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
         fetch(`${URL}/${selectedDogId}`)
           .then((resp) => resp.json())
           .then(setFormData)
-          .catch((err) => alert(err));
+          .catch((err) => {
+            handleSnackType("error");
+            setAlertMessage(err.message);
+          });
       }
     };
     getFormData();
-  }, [selectedDogId]);
+  }, [selectedDogId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const checkForReusedPass = async (pass) => {
     const resp = await fetch("http://localhost:3005/dogs");
@@ -71,7 +70,6 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
     }else{
       setFormData({ ...formData, [name]: value });
     }
-    
   };
 
   const handleSubmit = async (e) => {
@@ -118,11 +116,9 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
               setAlertMessage(err.message);
             });
         }else{
-          console.log("a user already has that password")
+          console.log("A user already has that password")
         }
       })
-      
-      
     } catch (err) {
       handleSnackType("error");
       setAlertMessage(err.message);
