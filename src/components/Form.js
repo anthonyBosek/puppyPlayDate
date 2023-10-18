@@ -26,7 +26,7 @@ const formSchema = object().shape({
   gender: string().required("Gender is required"),
   image: string().required("Image is required"),
   bio: string().required("Bio is required"),
-  password: string().required("Password is required")
+  password: string().min(4,"Your password must be at least 4 characters long").required("Password is required")
 });
 
 
