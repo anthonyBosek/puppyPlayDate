@@ -16,22 +16,19 @@ const App = () => {
     localStorage.setItem("dark", !isDark);
   };
 
-  const newSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
+  const newSearch = (e) =>  setSearchTerm(e.target.value);
+
 
   const authUserID = (id) => setAuthID(id);
 
-  const setAlertMessage = (msg) => {
-    setMessage(msg)
-  }
 
-  const handleSnackType = (type) => {
-    setSnackType(type)
-  }
+  const setAlertMessage = (msg) => setMessage(msg)
+
+
+  const handleSnackType = (type) => setSnackType(type)
+
 
   const ctx = { authUserID, searchTerm, setAlertMessage, handleSnackType };
-  // const ctx = [authUserID, searchTerm];
 
   return (
     <div className={isDark ? "app dark" : "app"}>

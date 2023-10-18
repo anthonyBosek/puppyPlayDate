@@ -5,11 +5,13 @@ import { useLocation } from "react-router-dom";
 const Search = ({ searchTerm, newSearch }) => {
   const [showingSearch, setShowingSearch] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     location.pathname === "/dogs"
       ? setShowingSearch(true)
       : setShowingSearch(false);
   }, [location.pathname]);
+
   return showingSearch ? (
     <div className="search">
       <input

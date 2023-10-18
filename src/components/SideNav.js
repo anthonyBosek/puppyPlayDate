@@ -19,15 +19,17 @@ const SideNav = ({ authID }) => {
     0,
     location.indexOf("/", 1) === -1 ? location.length : location.indexOf("/", 1)
   );
+
   const paths = [
     { title: "Home", path: "/" },
-    {title:"My Matches", path:"/matches"},
+    { title: "My Matches", path: "/matches" },
     { title: "Our Play Pack", path: "/dogs" },
     { title: "Create Play Profile", path: "/add" },
     { title: "My Play Profile", path: "/profile" },
     { title: "Play Events", path: "/events" },
     { title: "Play News", path: "/news" },
   ];
+
   const [selected, setSelected] = useState(
     paths.find((a) => a.path === shortPath).title
   );
@@ -35,7 +37,7 @@ const SideNav = ({ authID }) => {
   //Re render selected list item even on redirect triggered from other components
   useEffect(() => {
     setSelected(paths.find((a) => a.path === shortPath).title);
-  }, [shortPath]);
+  }, [shortPath]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Sidebar collapsed={isCollapsed}>
@@ -53,9 +55,10 @@ const SideNav = ({ authID }) => {
             </div>
           )}
         </MenuItem>
+        {!isCollapsed ? 
         <span className="logo">
-          {!isCollapsed ? <img src={logo} alt="logo" /> : null}
-        </span>
+          <img src={logo} alt="logo" /> 
+        </span> : null}
         <Item
           title="Home"
           to="/"
@@ -70,7 +73,7 @@ const SideNav = ({ authID }) => {
           selected={selected}
           setSelected={setSelected}
         />
-        {authID || dog.id ? (
+        {(authID || dog.id) && !isCollapsed ? (
           <div className="sub-tab">
             <Item
               title="My Matches"

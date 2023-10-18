@@ -30,7 +30,6 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 20vh; */
 }
 
 li:nth-child(3) > a > span.ps-menu-icon.css-wx7wi4 > svg > path {
@@ -40,11 +39,11 @@ li:nth-child(3) > a > span.ps-menu-icon.css-wx7wi4 > svg > path {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 224px;
 }
 .logo img {
   border-radius: 50%;
   width: 90%;
+  margin: 1vh auto;
 }
 
 li.ps-active,
