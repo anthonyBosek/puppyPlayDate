@@ -3,8 +3,6 @@ import { object, string } from "yup";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import bcrypt from 'bcryptjs'
 
-console.log(bcrypt)
-
 const URL = "http://localhost:3005/dogs";
 
 const initialValue = {
@@ -29,7 +27,7 @@ const formSchema = object().shape({
   password: string().required("Password is required")
 });
 
-const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
+const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
   const navigate = useNavigate();
   const { setAlertMessage, handleSnackType } = useOutletContext();
   const [formData, setFormData] = useState(initialValue);
@@ -192,7 +190,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
               onChange={handleChange}
             />
           </label>
-
+          {!edit ?
           <label htmlFor="password" className="col-6">
             Password
             <input
@@ -201,7 +199,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog }) => {
               value={formData.password}
               onChange={handleChange}
             />
-          </label>
+          </label> : null}
 
           <input
             type="submit"

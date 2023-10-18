@@ -10,6 +10,7 @@ import { FaBone, FaTimes } from "react-icons/fa";
 
 const ViewOne = () => {
   const { setAlertMessage, handleSnackType, handleDeleteDog } = useOutletContext();
+  // console.log(authUserID)
   const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
   const { id } = useParams() || userDog.id;
   const navigate = useNavigate();
@@ -91,7 +92,7 @@ const ViewOne = () => {
   }, [id, userDog.id]);
 
   const deleteProfile = (dog) => {
-    fetch(`http://localhost:3005/dogs/${dog.id}`, {
+    fetch(`http://localhost:3005/dogs/${id || dog.id}`, {
       method: "DELETE"
     })
     .then(() => {
@@ -100,6 +101,7 @@ const ViewOne = () => {
       setAlertMessage("Profile deleted");
       navigate("/add");
       handleDeleteDog(dog);
+      // authUserID(null)
     })
     .catch(err => {
       handleSnackType("error");
@@ -131,7 +133,7 @@ const ViewOne = () => {
             >
               Delete
             </button>
-            <Link to={`/edit/${id || userDog.id}`}>
+            <Link to={`/profile/edit/`}>
               <button className="btn-small bg-blue larger-text">Edit</button>
             </Link>
           </>

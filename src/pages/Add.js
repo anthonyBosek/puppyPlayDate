@@ -8,7 +8,7 @@ const Add = () => {
   const onAddDog = (dogData) => {
     if (dogData) {
       handleAddDog(dogData)
-      authUserID(dogData.id);
+      // authUserID(dogData.id);
       localStorage.dog = JSON.stringify(dogData);
       navigate(`/profile`);
     }

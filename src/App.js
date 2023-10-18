@@ -7,7 +7,7 @@ import AlertBar from "./components/AlertBar";
 const App = () => {
   const [isDark, setIsDark] = useState(localStorage.dark === "true");
   const [searchTerm, setSearchTerm] = useState("");
-  const [authID, setAuthID] = useState(null);
+  // const [authID, setAuthID] = useState(null);
   const [message, setMessage] = useState(null);
   const [snackType, setSnackType] = useState("");
   const [dogs, setDogs] = useState([]);
@@ -35,22 +35,22 @@ const App = () => {
   const handleDeleteDog = (oldDog) => {
     const updatedDogs = dogs.filter(dog => dog.id !== oldDog.id)
     setDogs(updatedDogs)
-    setAuthID(null)
+    // setAuthID(null)
   }
 
   const newSearch = (e) => setSearchTerm(e.target.value);
 
-  const authUserID = (id) => setAuthID(id);
+  // const authUserID = (id) => setAuthID(id);
 
   const setAlertMessage = (msg) => setMessage(msg);
 
   const handleSnackType = (type) => setSnackType(type);
 
-  const ctx = { dogs, searchTerm, authUserID, setAlertMessage, handleSnackType, handleAddDog, handleDeleteDog };
+  const ctx = { dogs, searchTerm, setAlertMessage, handleSnackType, handleAddDog, handleDeleteDog };
 
   return (
     <div className={isDark ? "app dark" : "app"}>
-      <SideNav authID={authID} />
+      <SideNav />
       <main className="container">
         {message && (
           <AlertBar
