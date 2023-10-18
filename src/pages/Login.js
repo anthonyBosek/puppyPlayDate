@@ -14,7 +14,8 @@ const Login = () =>{
         .then(setAllDogs)
     },[])
 
-    const handleClick = () =>{
+    const handleClick = (e) =>{
+        e.preventDefault()
         findUser()
     }
 
@@ -30,13 +31,12 @@ const Login = () =>{
     }
 
     const findUser = () =>{
-        if(pass){
+        if(pass.length>=4){
             bcrypt.hash(pass,10,(err,hash)=>{
                 if(err){
                     handleSnackType("error");
                     setAlertMessage("Error hashing password");
                 }else if(hash){
-                    // console.log(hash)
                     allDogs.forEach(dog => {
                         if(dog.password){
                             bcrypt.compare(pass,dog.password,(error,result)=>{
@@ -53,9 +53,8 @@ const Login = () =>{
             })
         }else{
             handleSnackType("error");
-            setAlertMessage("Please enter a password");
+            setAlertMessage("Please enter a password with at least 4 characters");
         }
-        // const user = allDogs.find(dog => dog.password)
     }
 
     

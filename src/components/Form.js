@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { object, string } from "yup";
+import { object, string, number } from "yup";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import bcrypt from 'bcryptjs'
 
@@ -22,11 +22,11 @@ const formSchema = object().shape({
   owner: string().required("Owner name is required"),
   name: string().required("Pet name is required"),
   breed: string().required("Breed is required"),
-  age: string().required("Age is required"),
+  age: number().min(0).max(31).required("Age is required"),
   gender: string().required("Gender is required"),
   image: string().required("Image is required"),
   bio: string().required("Bio is required"),
-  password: string().required("Password is required")
+  password: string().min(4,"Your password must be at least 4 characters long").required("Password is required")
 });
 
 
@@ -66,7 +66,12 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    if(name === "age"){
+      setFormData({ ...formData, [name]: parseInt(value) });
+    }else{
+      setFormData({ ...formData, [name]: value });
+    }
+    
   };
 
   const handleSubmit = async (e) => {
@@ -86,7 +91,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
         });
       });
       
-      const processedForm = { ...validData, password: hash };
+      const processedForm = { ...validData,password: hash };
       checkForReusedPass(validData.password).then(result =>{
         if(result){
           fetch(url, {
