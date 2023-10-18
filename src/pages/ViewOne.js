@@ -4,7 +4,7 @@ import { GiMale, GiFemale } from "react-icons/gi";
 import { FaBone, FaTimes } from "react-icons/fa";
 
 const ViewOne = () => {
-  const { setAlertMessage, handleSnackType } = useOutletContext();
+  const { setAlertMessage, handleSnackType, handleDeleteDog } = useOutletContext();
   const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
   const { id } = useParams() || userDog.id;
   const navigate = useNavigate();
@@ -86,6 +86,23 @@ const ViewOne = () => {
     getDogData();
   }, [id, userDog.id]);
 
+  const deleteProfile = (dog) => {
+    fetch(`http://localhost:3005/dogs/${dog.id}`, {
+      method: "DELETE"
+    })
+    .then(() => {
+      localStorage.removeItem("dog");
+      handleSnackType("warning");
+      setAlertMessage("Profile deleted");
+      navigate("/add");
+      handleDeleteDog(dog);
+    })
+    .catch(err => {
+      handleSnackType("error");
+      setAlertMessage(err.message);
+    })
+  }
+
   return (
     <div className="dogPage">
       <div>
@@ -106,12 +123,7 @@ const ViewOne = () => {
           <>
             <button
               className="btn-small bg-yellow larger-text"
-              onClick={() => {
-                localStorage.removeItem("dog");
-                handleSnackType("warning");
-                setAlertMessage("Profile deleted");
-                navigate("/add");
-              }}
+              onClick={() => deleteProfile(dog)}
             >
               Delete
             </button>
