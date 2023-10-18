@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useOutletContext } from "react";
 import { useParams } from "react-router-dom";
 import Form from "../components/Form";
 
 const Edit = () => {
+  const { setAlertMessage, handleSnackType } = useOutletContext();
   const { id } = useParams();
   const [selectDog, setSelectDog] = useState({});
 
   useEffect(() => {
     const getSelectDogData = () => {
-      fetch(`http://localhost:3001/dogs/${id}`)
+      fetch(`http://localhost:3005/dogs/${id}`)
         .then((res) => res.json())
         .then(setSelectDog)
         .catch((err) => console.log(err));
@@ -18,7 +19,8 @@ const Edit = () => {
 
   const onEditDog = () => {
     // redirect
-    // snackbar
+    handleSnackType("success");
+    setAlertMessage("Profile updated!");
   };
 
   return (
