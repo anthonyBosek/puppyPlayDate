@@ -59,21 +59,24 @@ const ViewOne = () => {
   };
 
   useEffect(() => {
-    if(id || userDog.id){
-      const getDogData = () => {
-      
-        fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
-          .then((resp) => (resp.status === 200 || 304 ? resp.json() : false))
-          .then(setDog)
-          .catch(alert);
-      };
-      getDogData();
-    }else{
-      navigate("/")
-    }
+    const getDogData = () => {
+
+      fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json()
+          } else{
+            navigate("/")
+          }
+        })
+
+        .then(setDog)
+        .catch(alert);
+    };
+    getDogData();
   }, [id, userDog.id]);
 
-  return(
+  return (
     <div className="dogPage">
       <div>
         <img src={dog.image} alt={dog.name} />
