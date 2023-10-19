@@ -24,7 +24,7 @@ const Edit = () => {
    }else{
     navigate("/")
    } 
-  }, [dog.id]);
+  }, [dog.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const onEditDog = () => {
     // redirect

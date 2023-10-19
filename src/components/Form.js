@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { object, string, number } from "yup";
 import { useOutletContext, useNavigate } from "react-router-dom";
+import PasswordStrengthBar from 'react-password-strength-bar';
 import bcrypt from 'bcryptjs'
 
 const URL = "http://localhost:3005/dogs";
@@ -31,7 +32,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
   const navigate = useNavigate();
   const { setAlertMessage, handleSnackType } = useOutletContext();
   const [formData, setFormData] = useState(initialValue);
-
+  let [readyToSubmit,setReadyToSubmit] = useState(false)
   useEffect(() => {
     const getFormData = () => {
       if (selectedDogId) {
@@ -65,11 +66,22 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    let newForm
     if(name === "age"){
-      setFormData({ ...formData, [name]: parseInt(value) });
+      newForm = { ...formData, [name]: parseInt(value) }
+      setFormData(newForm);
     }else{
-      setFormData({ ...formData, [name]: value });
+      newForm = { ...formData, [name]: value }
+      setFormData(newForm);
     }
+    formSchema
+  .validate(newForm)
+  .then(() => {
+    setReadyToSubmit(true);
+  })
+  .catch(() => {
+    setReadyToSubmit(false);
+  });
   };
 
   const handleSubmit = async (e) => {
@@ -116,7 +128,8 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
               setAlertMessage(err.message);
             });
         }else{
-          console.log("A user already has that password")
+          handleSnackType("error")
+          setAlertMessage("Please choose a different password")
         }
       })
     } catch (err) {
@@ -216,6 +229,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
               id="bio"
               value={formData.bio}
               onChange={handleChange}
+              
             />
           </label>
           {!edit ?
@@ -228,13 +242,20 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
               value={formData.password}
               onChange={handleChange}
             />
+            <PasswordStrengthBar style={{width:"30%"}} password={formData.password} />
           </label> : null}
-
+          {readyToSubmit ?
           <input
             type="submit"
             value="Submit"
             className="btn-large bg-yellow larger-text"
-          />
+          />:
+          <input
+            type="submit"
+            value="Submit"
+            disabled
+            className="btn-large bg-yellow larger-text"
+          />}
         </form>
       </div>
     </div>
