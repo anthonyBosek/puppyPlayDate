@@ -97,6 +97,7 @@ const ViewOne = () => {
     .then(() => {
       localStorage.removeItem("dog");
       localStorage.removeItem("matches");
+      localStorage.removeItem("unmatches");
       handleSnackType("warning");
       setAlertMessage("Profile deleted");
       navigate("/add");
