@@ -1,12 +1,14 @@
 import Form from "../components/Form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 const Add = () => {
   const navigate = useNavigate();
+  const { handleAddDog } = useOutletContext()
 
   const onAddDog = (dogData) => {
     if (dogData) {
       localStorage.dog = JSON.stringify(dogData);
+      handleAddDog(dogData)
       navigate(`/profile`);
     }
   };

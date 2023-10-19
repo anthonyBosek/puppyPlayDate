@@ -37,22 +37,27 @@ const Login = () => {
                     handleSnackType("error");
                     setAlertMessage("Error hashing password");
                 } else if (hash) {
-                    allDogs.forEach((dog) => {
-                        if (dog.password) {
-                            bcrypt.compare(pass, dog.password, (error, result) => {
-                                if (result) {
+                    (async () => {
+                        const foundDogs = await Promise.all(allDogs.map(async (dog) => {
+                            if (dog.password) {
+                                const data = await bcrypt.compare(pass, dog.password);
+                                if (data) {
+                                    console.log(data);
                                     handleLogin(dog);
-                                } else {
-                                    console.log("test")
-                                    handleSnackType("error");
-                                    setAlertMessage("No users with that password");
+                                    return dog; // Include the dog in the filtered array
                                 }
-                            });
-                        } else {
+                            }
+                            return null; // Don't include the dog in the filtered array
+                        }));
+
+                        const filteredDogs = foundDogs.filter((dog) => dog !== null);
+                        if(filteredDogs.length<1){
                             handleSnackType("error");
                             setAlertMessage("No users with that password");
                         }
-                    });
+                        console.log(filteredDogs);
+                    })()
+                    
                 }
             });
         } else {
@@ -87,3 +92,18 @@ const Login = () => {
 };
 
 export default Login;
+
+
+// (error, result) => {
+//     if (result) {
+//         handleLogin(dog);
+//     } else {
+//         console.log("test")
+//         handleSnackType("error");
+//         setAlertMessage("No users with that password");
+//     }
+// }
+// else {
+//     handleSnackType("error");
+//     setAlertMessage("No users with that password");
+// }
