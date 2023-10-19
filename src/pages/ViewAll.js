@@ -10,7 +10,7 @@ const ViewAll = () => {
     .filter(
       (dog) =>
         (dog.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        dog.bio.toLowerCase().includes(searchTerm.toLowerCase())) &&
+          dog.bio.toLowerCase().includes(searchTerm.toLowerCase())) &&
         !blockedIds.includes(dog.id)
     )
     .map((dog) => <Card key={dog.id} dog={dog} />);

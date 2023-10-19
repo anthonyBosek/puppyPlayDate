@@ -5,7 +5,6 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-/* anthony */
 html,
 body,
 #root,
@@ -87,11 +86,7 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
   cursor: pointer;
   outline: none;
 }
-/* #root > div > aside > div > nav > ul > li:nth-child(5) > a {
-  padding-left: 3rem;
-} */
 
-/* Danner */
 .all-cards,
 .dogPage,
 .form-div {
@@ -124,7 +119,6 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
   border-radius: 3px;
 }
 
-/* Kat */
 :root {
   --light-grey: #dae3e5;
   --dark-grey: #393d3f;

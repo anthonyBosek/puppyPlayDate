@@ -9,7 +9,8 @@ import { GiMale, GiFemale } from "react-icons/gi";
 import { FaBone, FaTimes } from "react-icons/fa";
 
 const ViewOne = () => {
-  const { setAlertMessage, handleSnackType, handleDeleteDog } = useOutletContext();
+  const { setAlertMessage, handleSnackType, handleDeleteDog } =
+    useOutletContext();
   const userDog = localStorage.dog ? JSON.parse(localStorage.dog) : false;
   const { id } = useParams() || userDog.id;
   const navigate = useNavigate();
@@ -88,27 +89,26 @@ const ViewOne = () => {
         });
     };
     getDogData();
-  }, [id, userDog.id]);// eslint-disable-line react-hooks/exhaustive-deps
+  }, [id, userDog.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const deleteProfile = (dog) => {
     fetch(`http://localhost:3005/dogs/${id || dog.id}`, {
-      method: "DELETE"
+      method: "DELETE",
     })
-    .then(() => {
-      localStorage.removeItem("dog");
-      localStorage.removeItem("matches");
-      localStorage.removeItem("unmatches");
-      handleSnackType("warning");
-      setAlertMessage("Profile deleted");
-      navigate("/add");
-      handleDeleteDog(dog);
-      // authUserID(null)
-    })
-    .catch(err => {
-      handleSnackType("error");
-      setAlertMessage(err.message);
-    })
-  }
+      .then(() => {
+        localStorage.removeItem("dog");
+        localStorage.removeItem("matches");
+        localStorage.removeItem("unmatches");
+        handleSnackType("warning");
+        setAlertMessage("Profile deleted");
+        navigate("/add");
+        handleDeleteDog(dog);
+      })
+      .catch((err) => {
+        handleSnackType("error");
+        setAlertMessage(err.message);
+      });
+  };
 
   return (
     <div className="dogPage">

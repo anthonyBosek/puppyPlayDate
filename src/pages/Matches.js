@@ -13,12 +13,12 @@ const Matches = () => {
   });
 
   useEffect(() => {
-    if(!userDog.id) {
+    if (!userDog.id) {
       handleSnackType("error");
       setAlertMessage("You Must Sign Up To Access This Page");
-      navigate("/add")
+      navigate("/add");
     }
-  }, [userDog.id]) 
+  }, [userDog.id]);
 
   return userDog.id ? (
     <div className="view-all">

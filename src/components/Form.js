@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { object, string, number } from "yup";
 import { useOutletContext, useNavigate } from "react-router-dom";
-import PasswordStrengthBar from 'react-password-strength-bar';
-import bcrypt from 'bcryptjs'
+import PasswordStrengthBar from "react-password-strength-bar";
+import bcrypt from "bcryptjs";
 
 const URL = "http://localhost:3005/dogs";
 
@@ -14,25 +14,30 @@ const initialValue = {
   gender: "",
   image: "",
   bio: "",
-  password: ""
+  password: "",
 };
 
 const formSchema = object().shape({
   owner: string().required("Owner name is required"),
   name: string().required("Pet name is required"),
   breed: string().required("Breed is required"),
-  age: number().min(0, "Not a valid age").max(35, "Not a valid age").required("Age is required"),
+  age: number()
+    .min(0, "Not a valid age")
+    .max(35, "Not a valid age")
+    .required("Age is required"),
   gender: string().required("Gender is required"),
   image: string().required("Image is required"),
   bio: string().required("Bio is required"),
-  password: string().min(4,"Password must be at least 4 characters long").required("Password is required")
+  password: string()
+    .min(4, "Password must be at least 4 characters long")
+    .required("Password is required"),
 });
 
 const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
   const navigate = useNavigate();
   const { setAlertMessage, handleSnackType } = useOutletContext();
   const [formData, setFormData] = useState(initialValue);
-  let [readyToSubmit,setReadyToSubmit] = useState(false)
+  let [readyToSubmit, setReadyToSubmit] = useState(false);
   useEffect(() => {
     const getFormData = () => {
       if (selectedDogId) {
@@ -51,44 +56,44 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
   const checkForReusedPass = async (pass) => {
     const resp = await fetch("http://localhost:3005/dogs");
     const data = await resp.json();
-    let reused = true
+    let reused = true;
     for (const dog of data) {
       if (dog.password) {
         const success = await bcrypt.compare(pass, dog.password);
-        if(success){
-          reused = false
-          break
+        if (success) {
+          reused = false;
+          break;
         }
       }
     }
-    return reused
+    return reused;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    let newForm
-    if(name === "age"){
-      newForm = { ...formData, [name]: parseInt(value) }
+    let newForm;
+    if (name === "age") {
+      newForm = { ...formData, [name]: parseInt(value) };
       setFormData(newForm);
-    }else{
-      newForm = { ...formData, [name]: value }
+    } else {
+      newForm = { ...formData, [name]: value };
       setFormData(newForm);
     }
     formSchema
-  .validate(newForm)
-  .then(() => {
-    setReadyToSubmit(true);
-  })
-  .catch(() => {
-    setReadyToSubmit(false);
-  });
+      .validate(newForm)
+      .then(() => {
+        setReadyToSubmit(true);
+      })
+      .catch(() => {
+        setReadyToSubmit(false);
+      });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = `${URL}/${selectedDogId || ""}`;
     const method = selectedDogId ? "PATCH" : "POST";
-  
+
     try {
       const validData = await formSchema.validate(formData);
       const hash = await new Promise((resolve, reject) => {
@@ -100,10 +105,10 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
           }
         });
       });
-      
-      const processedForm = { ...validData,password: hash };
-      checkForReusedPass(validData.password).then(result =>{
-        if(result){
+
+      const processedForm = { ...validData, password: hash };
+      checkForReusedPass(validData.password).then((result) => {
+        if (result) {
           fetch(url, {
             method,
             headers: {
@@ -127,17 +132,17 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
               handleSnackType("error");
               setAlertMessage(err.message);
             });
-        }else{
-          handleSnackType("error")
-          setAlertMessage("Please choose a different password")
+        } else {
+          handleSnackType("error");
+          setAlertMessage("Please choose a different password");
         }
-      })
+      });
     } catch (err) {
       handleSnackType("error");
       setAlertMessage(err.message);
     }
   };
-  
+
   return (
     <div>
       <div className="form-div">
@@ -229,33 +234,38 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
               id="bio"
               value={formData.bio}
               onChange={handleChange}
-              
             />
           </label>
-          {!edit ?
-          <label htmlFor="password" className="col-6">
-            Password:
+          {!edit ? (
+            <label htmlFor="password" className="col-6">
+              Password:
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+              <PasswordStrengthBar
+                style={{ width: "30%" }}
+                password={formData.password}
+              />
+            </label>
+          ) : null}
+          {readyToSubmit ? (
             <input
-              type="password"
-              name="password"
-              id="password"
-              value={formData.password}
-              onChange={handleChange}
+              type="submit"
+              value="Submit"
+              className="btn-large bg-yellow larger-text"
             />
-            <PasswordStrengthBar style={{width:"30%"}} password={formData.password} />
-          </label> : null}
-          {readyToSubmit ?
-          <input
-            type="submit"
-            value="Submit"
-            className="btn-large bg-yellow larger-text"
-          />:
-          <input
-            type="submit"
-            value="Submit"
-            disabled
-            className="btn-large bg-yellow larger-text"
-          />}
+          ) : (
+            <input
+              type="submit"
+              value="Submit"
+              disabled
+              className="btn-large bg-yellow larger-text"
+            />
+          )}
         </form>
       </div>
     </div>

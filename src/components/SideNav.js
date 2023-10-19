@@ -4,7 +4,12 @@ import { useLocation } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import { GrHome } from "react-icons/gr";
 import { GiSittingDog } from "react-icons/gi";
-import { FaDog, FaRegUser, FaRegNewspaper, FaRegCreditCard } from "react-icons/fa6";
+import {
+  FaDog,
+  FaRegUser,
+  FaRegNewspaper,
+  FaRegCreditCard,
+} from "react-icons/fa6";
 
 import { IoMenuOutline } from "react-icons/io5";
 import { BiCalendar } from "react-icons/bi";
@@ -30,7 +35,7 @@ const SideNav = () => {
     { title: "My Play Profile", path: "/edit" },
     { title: "Play Events", path: "/events" },
     { title: "Play News", path: "/news" },
-    { title: "Log In", path: "/login"}
+    { title: "Log In", path: "/login" },
   ];
 
   const [selected, setSelected] = useState(
@@ -112,21 +117,24 @@ const SideNav = () => {
           selected={selected}
           setSelected={setSelected}
         />
-        {dog.id ?
-        <Item
-          title="Log Out"
-          to="/"
-          icon={<FaRegCreditCard />}
-          selected={selected}
-          logOut={true}
-          setSelected={setSelected}
-        />:<Item
-          title="Log In"
-          to="/login"
-          icon={<FaRegCreditCard />}
-          selected={selected}
-          setSelected={setSelected}
-        />}
+        {dog.id ? (
+          <Item
+            title="Log Out"
+            to="/"
+            icon={<FaRegCreditCard />}
+            selected={selected}
+            logOut={true}
+            setSelected={setSelected}
+          />
+        ) : (
+          <Item
+            title="Log In"
+            to="/login"
+            icon={<FaRegCreditCard />}
+            selected={selected}
+            setSelected={setSelected}
+          />
+        )}
       </Menu>
     </Sidebar>
   );
