@@ -80,7 +80,7 @@ This single-page application allows users to create a profile for their pooch an
 ## What I Learned
 
 - `Kat`: This project was an eye-opening experience in the world of React! It was an exciting challenge working with routing, context, and new-to-me packages like the snack bar. I enjoyed creating a fun, interactive application that I hope others can enjoy. My team was incredible, so knowledgeable and supportive, I can't express my appreciation for their efforts enough. I learned that where there is a will, there's a way, and probably a package to help you out too!
-- `Danner`:
+- `Danner`: Working on Puppy PlayDate with my team has been super fun and an amazing opportunity to learn React and get into responsive webpage building. The collaboration on this project opened us up to explore the world of team web development while gaining hands-on experience with React. It was a great chance to make something awesome with an awesome group of people. I really applaud my team's dedication and how we supported each other in tackling challenges. This project has solidified my belief that working together and learning as a team is a great way to experience code and community!
 - `Anthony`: Building this app was great! It incorporated some of the fundamentals of `React` in a new and exciting way. We were able to incorporate client side routing with `React Router` and make this a true SPA. As always, I learned a great deal from the people I worked with on this project. With good communication and shared knowledge, we were able to overcome the conflicts efficiently and complete this project above our expectations. Awesome experience, stellar team!!
 
 * [Back To Top](#table-1-phase-2-project)
