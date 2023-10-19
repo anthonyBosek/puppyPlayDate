@@ -5,7 +5,7 @@ import Add from "./pages/Add";
 import Edit from "./pages/Edit";
 import ViewAll from "./pages/ViewAll";
 import News from "./pages/News";
-import Events from "./pages/Events";
+import PlayEvents from "./pages/PlayEvents";
 import ViewOne from "./pages/ViewOne";
 import Matches from "./pages/Matches";
 import Login from "./pages/Login";
@@ -39,7 +39,7 @@ const routes = [
       },
       {
         path: "/events",
-        element: <Events />,
+        element: <PlayEvents />,
       },
       {
         path: "/dogs/:id",
@@ -55,8 +55,8 @@ const routes = [
       },
       {
         path: "/login",
-        element: <Login />
-      }
+        element: <Login />,
+      },
     ],
   },
 ];

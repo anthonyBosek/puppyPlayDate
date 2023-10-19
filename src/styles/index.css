@@ -18,7 +18,7 @@ body,
   display: flex;
   position: relative;
 }
-
+/* sidenav */
 .title {
   font-size: 1.5rem;
   font-weight: 500;
@@ -50,7 +50,7 @@ li.ps-menuitem-root.ps-active.css-1654oxy :hover,
 li.ps-menuitem-root.css-1t8x7v1 :hover {
   background-color: var(--bg-color);
 }
-
+/* topnav */
 .top-nav {
   height: 5vh;
   display: flex;
@@ -59,6 +59,7 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
   padding-right: 4vw;
   background-color: var(--primary-color);
 }
+
 #root > div > aside > div {
   background-color: var(--primary-color);
 }
@@ -86,7 +87,7 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
   cursor: pointer;
   outline: none;
 }
-
+/* carda */
 .all-cards,
 .dogPage,
 .form-div {
@@ -172,7 +173,7 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
   align-items: center;
 }
 .outlet {
-  height: 95vh;
+  height: 90vh;
   overflow-y: scroll;
 }
 .outlet::-webkit-scrollbar {
@@ -318,4 +319,49 @@ textarea {
 }
 #login input {
   width: 100%;
+}
+/* events */
+.events {
+  padding: 2rem;
+}
+.event-card {
+  border-bottom: 1px solid var(--main-txt-color);
+  padding: 1rem;
+  display: flex;
+}
+.card-img {
+  border-radius: 3px;
+  margin-right: 1rem;
+}
+.card-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+.card-date {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+.card-loc {
+  font-size: 1.5rem;
+  margin: 1rem 0 3.5rem 1rem;
+}
+.card-desc {
+  margin: 1rem;
+  font-size: 1.25rem;
+  text-indent: 5px;
+  max-width: 80%;
+}
+.event-card iframe {
+  margin: 1rem;
+  width: 80%;
+  height: 200px;
+}
+/* footer */
+footer {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--primary-color);
 }
