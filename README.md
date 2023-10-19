@@ -1,6 +1,8 @@
 # puppyPlayDate
 
-An application to arrange social meetings between dogs.
+Find furry companions for your pets and embark on delightful playdates with fellow dog lovers in your area!
+
+This single-page application allows users to create a profile for their pooch and view other canine companions looking for socialization. Match with new friends, or unmatch if you don't feel it's a good fit. View and meet up at community events in your area!
 
 ## Home
 
@@ -29,7 +31,8 @@ An application to arrange social meetings between dogs.
 
 ## Starting the Application
 
-- Make sure nothing is currently running on `http://localhost:3005`.
+- Fork and clone this repo, and open in your favorite code editor.
+- Make sure nothing is currently running on `http://localhost:3000`.
 - Open a terminal window in the main directory of where this project is located on your computer.
 - Run `json-server --watch db.json`.
 - It should be running on `http://localhost:3005` and your terminal should look something like this:
@@ -45,16 +48,19 @@ An application to arrange social meetings between dogs.
 
 ## Using the Application
 
--
--
--
--
--
+- On the Home page click `Let's Get Started!` button to create your pup's profile.
+- Be sure to completely fill out the form, make a strong password, and `Submit`.
+- You can view all of the other dogs in `Our Play Pack`, and search by name or keyword. Click `View` button for more details!
+- On a pooch's profile, you can click the `Bone` button to match with them, or the `✖` button to unmatch.
+- Matched dogs will now appear on `My Matches` page. You can unmatch at any time for a dog to no longer appear in the Play Pack.
+- Logging in and out is easy with the button on the side navigation! Just don't forget your password!
+- If you need to make changes to your profile, simply click the `Edit` button and you will be directed back to the initial form.
+- Although we hope you won't, you can also delete your profile with the click of a button!
 
 ## Optional Features
 
--
--
+- Toggle between light and dark mode with the icon in the top right corner of the screen. Your preferences will be saved in local storage.
+- Application can be used with ease on any size screen! 
 - It should look like this:
 - ==============================================
   ![Home page of app.](./src/assets/screen-dk.png "Home Page")
@@ -73,8 +79,8 @@ An application to arrange social meetings between dogs.
 
 ## What I Learned
 
-- `Kat`:
+- `Kat`: This project was an eye-opening experience in the world of React! It was an exciting challenge working with routing, context, and new-to-me packages like the snack bar. I enjoyed creating a fun, interactive application that I hope others can enjoy. My team was incredible, so knowledgeable and supportive, I can't express my appreciation for their efforts enough. I learned that where there is a will, there's a way, and probably a package to help you out too!
 - `Danner`:
 - `Anthony`: Building this app was great! It incorporated some of the fundamentals of `React` in a new and exciting way. We were able to incorporate client side routing with `React Router` and make this a true SPA. As always, I learned a great deal from the people I worked with on this project. With good communication and shared knowledge, we were able to overcome the conflicts efficiently and complete this project above our expectations. Awesome experience, stellar team!!
 
-* [Back To Top](#table-2-phase-1-project)
+* [Back To Top](#table-1-phase-2-project)
