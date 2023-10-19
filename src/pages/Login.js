@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs"
 import { useEffect, useState } from "react"
 import { useNavigate, useOutletContext } from "react-router-dom"
 
+
 const Login = () =>{
     const { setAlertMessage, handleSnackType } = useOutletContext();
     const [allDogs, setAllDogs] = useState([])
@@ -71,6 +72,7 @@ const Login = () =>{
                         value={pass}
                         onChange={updatePass}
                     />
+                    
                     </label>
                 <button onClick={handleClick} className="btn-small bg-yellow larger-text">Log In</button>
             </form>

@@ -88,7 +88,7 @@ const ViewOne = () => {
         });
     };
     getDogData();
-  }, [id, userDog.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [id, userDog.id]);// eslint-disable-line react-hooks/exhaustive-deps
 
   const deleteProfile = (dog) => {
     fetch(`http://localhost:3005/dogs/${id || dog.id}`, {
