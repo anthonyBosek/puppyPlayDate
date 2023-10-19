@@ -22,7 +22,7 @@ const Matches = () => {
 
   return userDog.id ? (
     <div className="view-all">
-      <h1>My matches</h1>
+      <h1>My matches 🐾</h1>
       <div className="all-cards">{allMatches}</div>
     </div>
   ) : null;
