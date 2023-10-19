@@ -96,7 +96,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
 
     try {
       const validData = await formSchema.validate(formData);
-      const hash = await new Promise((resolve, reject) => {
+      const hash = !edit ? await new Promise((resolve, reject) => {
         bcrypt.hash(validData.password, 10, (err, hash) => {
           if (err) {
             reject(err);
@@ -104,7 +104,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
             resolve(hash);
           }
         });
-      });
+      }): validData.password
 
       const processedForm = { ...validData, password: hash };
       checkForReusedPass(validData.password).then((result) => {
