@@ -3,10 +3,10 @@ const PlayEvent = ({ title, date, location, description, image, ifr }) => {
     <div className="event-card">
       <img src={image} alt={title} className="card-img" />
       <div className="event-details">
-        <span className="card-title">{title}</span>
-        <span className="card-date">{new Date(date).toDateString()}</span>
-        <div className="card-loc">{location}</div>
-        <div className="card-desc">{description}</div>
+        <h2>{title}</h2>
+        <p className="card-details">{new Date(date).toDateString()}</p>
+        <p className="card-details">{location}</p>
+        <p className="card-details">{description}</p>
         <iframe
           src={ifr}
           frameBorder="1"
