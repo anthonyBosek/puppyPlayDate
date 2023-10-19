@@ -29,10 +29,10 @@ An application to arrange social meetings between dogs.
 
 ## Starting the Application
 
-- Make sure nothing is currently running on `http://localhost:3000`.
+- Make sure nothing is currently running on `http://localhost:3005`.
 - Open a terminal window in the main directory of where this project is located on your computer.
 - Run `json-server --watch db.json`.
-- It should be running on `http://localhost:3000` and your terminal should look something like this:
+- It should be running on `http://localhost:3005` and your terminal should look something like this:
 - ==============================================
   ![JSON Server running correctly.](./src/assets/server.png "JSON Server")
 - ==============================================
