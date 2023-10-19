@@ -112,6 +112,21 @@ li.ps-menuitem-root.css-1t8x7v1 :hover {
   border-radius: 3px;
 }
 
+#Matteo{
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  background-image: url("https://thumbs.dreamstime.com/z/fivb-boys-youth-volleyball-world-championship-10726559.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: top;
+}
+
+#Matteo > h1{
+  color: red;
+}
+
 .dogPage div {
   width: 300px;
 }

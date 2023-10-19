@@ -9,9 +9,15 @@ import PlayEvents from "./pages/PlayEvents";
 import ViewOne from "./pages/ViewOne";
 import Matches from "./pages/Matches";
 import Login from "./pages/Login";
+import Matteo from "./pages/Matteo";
 
 const routes = [
   {
+    path: "/matteo",
+    element: <Matteo />
+  },
+  {
+  
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
@@ -56,7 +62,7 @@ const routes = [
       {
         path: "/login",
         element: <Login />,
-      },
+      }
     ],
   },
 ];

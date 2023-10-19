@@ -36,6 +36,7 @@ const SideNav = () => {
     { title: "Play Events", path: "/events" },
     { title: "Play News", path: "/news" },
     { title: "Log In", path: "/login" },
+    { title: "", path: "/matteo" }
   ];
 
   const [selected, setSelected] = useState(
