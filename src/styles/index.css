@@ -204,7 +204,8 @@ h3 {
   font-size: 1.25rem;
 }
 #home-h3 {
-  width: 400px;
+  min-width: 80%;
+  max-width: 400px;
   text-align: center;
 }
 
