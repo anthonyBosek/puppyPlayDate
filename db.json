@@ -208,7 +208,7 @@
       "date": "2023-11-03",
       "location": "Venice Beach, Los Angeles, CA",
       "description": "Dive into fun with your furry pals at our splashtastic pool party! Let your dogs paddle and play while you mingle with other dog lovers. Don't forget to grab a refreshing treat for your beloved companions.",
-      "image": "https://example.com/pawsome_pool_party.jpg"
+      "image": "https://images.unsplash.com/photo-1597595804104-f88ed6f5b31b?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwcG9vbHxlbnwwfHwwfHx8MA%3D%3D"
     },
     {
       "id": 102,
@@ -216,7 +216,7 @@
       "date": "2023-10-29",
       "location": "Central Park, New York City, NY",
       "description": "Get ready for a spooktacular evening of canine costumes and treats! Let your dog's inner spirit run wild with creative costumes and enjoy a night filled with howling fun and delightful surprises.",
-      "image": "https://example.com/howl_o_ween_extravaganza.jpg"
+      "image": "https://images.unsplash.com/photo-1604186838347-9faaf0b83be8?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9ncyUyMGluJTIwY29zdHVtZXN8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 103,
@@ -224,7 +224,7 @@
       "date": "2023-11-18",
       "location": "Pearl Street Mall, Boulder, CO",
       "description": "Raise your paws for a tail-wagging good time with dog-friendly brews and live music! Unleash your inner party animal and enjoy a variety of dog-themed brews while grooving to the beats of live music.",
-      "image": "https://example.com/bark_n_brews_beer_bash.jpg"
+      "image": "https://plus.unsplash.com/premium_photo-1664287397328-54a75971a4f9?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGRvZyUyMHdpdGglMjBiZWVyfGVufDB8fDB8fHww"
     },
     {
       "id": 104,
@@ -232,7 +232,7 @@
       "date": "2023-10-21",
       "location": "Rodeo Drive, Beverly Hills, CA",
       "description": "Strut your stuff on the runway with your furry fashionista friends! Dress your dogs in the latest trends and witness them steal the spotlight at our glamorous fashion show designed exclusively for stylish canines.",
-      "image": "https://example.com/paws_on_the_catwalk_fashion_show.jpg"
+      "image": "https://images.unsplash.com/photo-1527351872720-dc4768c9b696?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDl8fGRvZ3MlMjBpbiUyMGNvc3R1bWVzfGVufDB8fDB8fHww"
     },
     {
       "id": 105,
@@ -240,7 +240,7 @@
       "date": "2023-11-25",
       "location": "Pike Place Market, Seattle, WA",
       "description": "Join us for a drool-worthy feast to celebrate the spirit of gratitude with your beloved pooch! Indulge in a delectable spread of canine-friendly delicacies and make this Thanksgiving an unforgettable one for your furry friend.",
-      "image": "https://example.com/barksgiving_feast.jpg"
+      "image": "https://images.unsplash.com/photo-1510621785963-8c1744b6a8c5?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGRvZyUyMGxlYXZlc3xlbnwwfHwwfHx8MA%3D%3D"
     },
     {
       "id": 106,
@@ -248,7 +248,7 @@
       "date": "2023-12-15",
       "location": "French Quarter, New Orleans, LA",
       "description": "March in the festive parade with your four-legged companions and spread some holiday cheer! Dress your dogs in adorable holiday-themed costumes and join us in making the season bright for all our furry friends.",
-      "image": "https://example.com/santa_paws_parade.jpg"
+      "image": "https://images.unsplash.com/photo-1606588125843-09804161fb8b?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRvZ3MlMjBjaHJpc3RtYXN8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 107,
@@ -256,7 +256,7 @@
       "date": "2023-12-02",
       "location": "Market Square, San Antonio, TX",
       "description": "Get ready for a paw-ty with some sizzling treats and a Mexican flair! Treat your taste buds and those of your dogs to some flavorful Mexican delights and join us in celebrating the spirit of fiesta with your furry amigos.",
-      "image": "https://example.com/fur_tastic_fiesta.jpg"
+      "image": "https://images.unsplash.com/photo-1609910063430-33fc20be9f88?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwaW4lMjBzb21icmVyb3xlbnwwfHwwfHx8MA%3D%3D"
     },
     {
       "id": 108,
@@ -264,7 +264,7 @@
       "date": "2023-11-08",
       "location": "Grant Park, Chicago, IL",
       "description": "Roll up for a day of tail-wagging fun with games, prizes, and delectable delights! Engage in a variety of exciting activities specially curated for dogs and their humans and make lasting memories with your playful companions.",
-      "image": "https://example.com/canine_carnival_craze.jpg"
+      "image": "https://images.unsplash.com/photo-1640631707864-6e2ac529e405?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fGRvZ3MlMjBpbiUyMHRoZSUyMHBhcmt8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 109,
@@ -272,7 +272,7 @@
       "date": "2023-12-09",
       "location": "South Beach, Miami, FL",
       "description": "Groove with your furry friends at our outdoor music festival and enjoy the best beats under the sun! Let your dogs sway to the music and bask in the vibrant atmosphere of our paw-some musical extravaganza.",
-      "image": "https://example.com/bark_beats_bonanza.jpg"
+      "image": "https://images.unsplash.com/photo-1675544050566-c4be432d0418?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvZyUyMG11c2ljfGVufDB8fDB8fHww"
     },
     {
       "id": 110,
@@ -280,7 +280,7 @@
       "date": "2023-10-24",
       "location": "Union Square, San Francisco, CA",
       "description": "Treat your paws to some pampering and primping at our luxurious spa day for pups! Indulge in a relaxing day of grooming and rejuvenation alongside your furry friends and pamper them with the royal treatment they deserve.",
-      "image": "https://example.com/pawdicure_party.jpg"
+      "image": "https://plus.unsplash.com/premium_photo-1663045507297-61ba6574e54a?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9nJTIwbWFuaWN1cmV8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 111,
@@ -288,7 +288,7 @@
       "date": "2023-11-11",
       "location": "Downtown Portland, OR",
       "description": "Whip up some tail-wagging treats and bond over baking at our dog-friendly cooking class! Join our baking session to create delicious treats for your dogs and forge deeper bonds with your canine companions in a fun-filled culinary adventure.",
-      "image": "https://example.com/biscuit_baking_bonanza.jpg"
+      "image": "https://images.unsplash.com/photo-1647989865879-4bdb26a999d5?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRvZyUyMGNvb2tpbmd8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 112,
@@ -296,7 +296,7 @@
       "date": "2023-12-23",
       "location": "Times Square, New York City, NY",
       "description": "Dress to the nines and dance the night away with your furry friends at our grand holiday gala! Embrace the festive spirit and elegance of our grand ball as you and your dogs create unforgettable memories in a night of glamour and charm.",
-      "image": "https://example.com/howliday_ball.jpg"
+      "image": "https://images.unsplash.com/photo-1576247975963-4995837fb3e6?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGRvZ3MlMjBjaHJpc3RtYXN8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 113,
@@ -304,7 +304,7 @@
       "date": "2023-10-27",
       "location": "Balboa Park, San Diego, CA",
       "description": "Enjoy a sunny afternoon with a delightful picnic and some outdoor games for you and your furry companions! Bask in the beauty of nature as you bond with your dogs over a picnic spread and engage in playful activities under the open sky.",
-      "image": "https://example.com/pupnic_in_the_park.jpg"
+      "image": "https://images.unsplash.com/photo-1679521184587-c3cf3045df4e?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fGRvZ3MlMjBpbiUyMHRoZSUyMHBhcmt8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 114,
@@ -312,7 +312,7 @@
       "date": "2023-11-05",
       "location": "Downtown Austin, TX",
       "description": "Indulge in a delectable brunch spread with your canine crew and sip on some 'paw-some' mocktails! Delight in a morning of culinary delights tailored for you and your dogs, and relish the joy of brunching with your furry best friends.",
-      "image": "https://example.com/bark_n_brunch_bash.jpg"
+      "image": "https://images.unsplash.com/photo-1619333774340-3a878585c2e4?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGRvZ3MlMjBpbiUyMHRoZSUyMHBhcmt8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 115,
@@ -320,7 +320,7 @@
       "date": "2023-10-30",
       "location": "Runyon Canyon Park, Los Angeles, CA",
       "description": "Embark on an adventure-packed hike along the scenic trails, tail wagging encouraged! Discover the beauty of nature with your dogs by your side and immerse yourself in the serenity of our guided trail hike for an unforgettable outdoor experience.",
-      "image": "https://example.com/tail_waggin_trail_hike.jpg"
+      "image": "https://images.unsplash.com/photo-1508531321667-dabf317cc382?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRvZyUyMGxlYXZlc3xlbnwwfHwwfHx8MA%3D%3D"
     },
     {
       "id": 116,
@@ -328,7 +328,7 @@
       "date": "2023-10-31",
       "location": "Downtown Salem, MA",
       "description": "Join the spooktacular procession with your furry pals and compete for the title of 'Best Dressed Howler!' Participate in our thrilling dog parade and showcase your creativity as you and your dogs howl your way to the top of the costume contest.",
-      "image": "https://example.com/howl_o_ween_pawrade.jpg"
+      "image": "https://images.unsplash.com/photo-1532202802379-df93d543bac3?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fGRvZ3MlMjBpbiUyMGNvc3R1bWVzfGVufDB8fDB8fHww"
     },
     {
       "id": 117,
@@ -336,7 +336,7 @@
       "date": "2023-10-20",
       "location": "Helen, GA",
       "description": "Celebrate the spirit of Oktoberfest with your furry companions, enjoy some paw-some treats and lively games! Immerse yourself in the festive vibes of our canine carnival and revel in the joy of traditional Oktoberfest festivities with your beloved dogs.",
-      "image": "https://example.com/barktoberfest.jpg"
+      "image": "https://images.unsplash.com/photo-1575200992370-e4b81c39f96d?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGRvZyUyMHdpdGglMjBiZWVyfGVufDB8fDB8fHww"
     },
     {
       "id": 118,
@@ -344,7 +344,7 @@
       "date": "2023-11-15",
       "location": "Downtown Charleston, SC",
       "description": "Unleash your inner artist alongside your four-legged pals and create paw-some masterpieces! Explore your creative side in the company of your dogs and engage in a colorful painting session that will leave paw prints of joy and memories to cherish.",
-      "image": "https://example.com/paws_and_paint_party.jpg"
+      "image": "https://images.unsplash.com/photo-1592492135673-55966d3b541a?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nJTIwaW4lMjBwYWludHxlbnwwfHwwfHx8MA%3D%3D"
     },
     {
       "id": 119,
@@ -352,7 +352,7 @@
       "date": "2023-11-22",
       "location": "Downtown Denver, CO",
       "description": "Mix and mingle with other dog owners and their playful pups over some puppuccinos and treats! Socialize with like-minded dog enthusiasts and watch your dogs make new furry friends while you enjoy a warm cup of coffee and engaging conversations.",
-      "image": "https://example.com/mutt_mingle_mixer.jpg"
+      "image": "https://plus.unsplash.com/premium_photo-1681843918432-78eb8a13f1b2?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRvZyUyMGFsY29ob2x8ZW58MHx8MHx8fDA%3D"
     },
     {
       "id": 120,
@@ -360,7 +360,7 @@
       "date": "2023-12-10",
       "location": "Union Square, New York City, NY",
       "description": "Shop for some paw-some gifts for your furry friends and enjoy the festive market vibes with other pet enthusiasts! Browse through a variety of dog-friendly merchandise and immerse yourself in the joyous atmosphere of our holiday-themed market extravaganza.",
-      "image": "https://example.com/howliday_market_mania.jpg"
+      "image": "https://images.unsplash.com/photo-1583513702411-9dade5d3cb12?auto=format&fit=crop&q=60&w=400&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRvZ3MlMjBjaHJpc3RtYXN8ZW58MHx8MHx8fDA%3D"
     }
   ]
 }
