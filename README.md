@@ -34,7 +34,7 @@ This single-page application allows users to create a profile for their pooch an
 - Fork and clone this repo, and open in your favorite code editor.
 - Make sure nothing is currently running on `http://localhost:3000`.
 - Open a terminal window in the main directory of where this project is located on your computer.
-- Run `json-server --watch db.json`.
+- Run `npm run server`.
 - It should be running on `http://localhost:3005` and your terminal should look something like this:
 - ==============================================
   ![JSON Server running correctly.](./src/assets/server.png "JSON Server")
