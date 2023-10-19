@@ -73,7 +73,7 @@ This single-page application allows users to create a profile for their pooch an
 
 ## Attributions
 
-- The project was completed with collaboration from: `Kat Tannehill`, `Danner Bumgartner`, and `Anthony Bosek`
+- The project was completed with collaboration from: `Kat Tannehill`, `Danner Baumgartner`, and `Anthony Bosek`
 - This project was created with combination of skills learned from the `Flatiron` curriculum and our own individual research.
 - Many of the photos used for the purposes of this project were supplied by [Unsplash](https://unsplash.com/).
 - And of course, [Stack Overflow](https://stackoverflow.com/).
