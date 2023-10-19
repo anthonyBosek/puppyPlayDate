@@ -199,6 +199,17 @@
       "gender": "female",
       "bio": "Lily is a cheerful Bichon Frise who loves meeting new friends and playing in the park. She enjoys yogurt drops as snacks, but isn't a fan of the mailman!",
       "image": "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      "owner": "Danner",
+      "name": "monkey man",
+      "breed": "poop dog",
+      "age": 24,
+      "gender": "male",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT3HG-JJJdvt2lyLzkA-3UBRpBbvKpEuVWJBJoqQsl8Y4fB066PhVdFSMJ&s=0",
+      "bio": "I love hate and hate love",
+      "password": "$2a$10$LEOqxjxFDvb6BUnwq7YipuoA/151xORwj.sFpWyciSe2aZYv5jNS2",
+      "id": 21
     }
   ],
   "events": [
