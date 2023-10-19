@@ -40,7 +40,7 @@ An application to arrange social meetings between dogs.
 - Run `npm run start`.
 - It should take you to a page that looks like this:
 - ==============================================
-  ![Home page of app.](./assets/index.png "Home Page")
+  ![Home page of app.](./src/assets/screen-lt.png "Home Page")
 - ==============================================
 
 ## Using the Application
@@ -57,7 +57,7 @@ An application to arrange social meetings between dogs.
 -
 - It should look like this:
 - ==============================================
-  ![Home page of app.](./assets/dark-index.png "Home Page")
+  ![Home page of app.](./src/assets/screen-dk.png "Home Page")
 - ==============================================
 
 ## License
