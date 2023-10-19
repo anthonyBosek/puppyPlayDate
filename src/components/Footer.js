@@ -1,8 +1,15 @@
+import { FaPaw } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer id="footer">
       <div>© 2023 Tannehill | Baumgartner | Bosek</div>
-      <div>Puppy PlayDate ®</div>
+      <div>
+        <span>
+          <FaPaw />
+        </span>
+        {"  "}
+        Puppy PlayDate ®
+      </div>
     </footer>
   );
 };

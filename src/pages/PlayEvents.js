@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaPaw } from "react-icons/fa";
 import PlayEvent from "../components/PlayEvent";
 
 const PlayEvents = () => {
@@ -19,7 +20,13 @@ const PlayEvents = () => {
 
   return (
     <div>
-      <h1>Upcoming Puppy PlayDate Events 🐾</h1>
+      <h1>
+        Upcoming Puppy PlayDate Events
+        <span className="paw-icon">
+          <FaPaw />
+          <FaPaw />
+        </span>
+      </h1>
       <div className="events">{allPlayEvents}</div>
     </div>
   );

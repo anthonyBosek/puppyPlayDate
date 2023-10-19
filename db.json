@@ -199,50 +199,6 @@
       "gender": "female",
       "bio": "Lily is a cheerful Bichon Frise who loves meeting new friends and playing in the park. She enjoys yogurt drops as snacks, but isn't a fan of the mailman!",
       "image": "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-    },
-    {
-      "owner": "Danner",
-      "name": "monkey man",
-      "breed": "poop dog",
-      "age": 24,
-      "gender": "male",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT3HG-JJJdvt2lyLzkA-3UBRpBbvKpEuVWJBJoqQsl8Y4fB066PhVdFSMJ&s=0",
-      "bio": "I love hate and hate love",
-      "password": "$2a$10$LEOqxjxFDvb6BUnwq7YipuoA/151xORwj.sFpWyciSe2aZYv5jNS2",
-      "id": 21
-    },
-    {
-      "owner": "Danner",
-      "name": "monkey man",
-      "breed": "poop doggy",
-      "age": 22,
-      "gender": "female",
-      "image": "https://cdn.discordapp.com/attachments/569241255201079317/1163597671865520148/IMG_6463.jpeg?ex=654027c7&is=652db2c7&hm=db2d37627f0b1c8f37e3071f00d571281e3628f82ed40e7862989d0b5547fbdd&",
-      "bio": "im a poop dog at heart",
-      "password": "$2a$10$4yaJl0LMyWyuQZpErBSBiucy.qBkAcXKOKBe5jlWYZICSA2E0d8VO",
-      "id": 22
-    },
-    {
-      "owner": "Danner",
-      "name": "2",
-      "breed": "2",
-      "age": 2,
-      "gender": "male",
-      "image": "2",
-      "bio": "2",
-      "password": "$2a$10$m2ajkMQjJ1EDaGZp3SlmgesGU74GQjVsHb6o4wxSncN50rLudGiF6",
-      "id": 23
-    },
-    {
-      "owner": "3",
-      "name": "3",
-      "breed": "3",
-      "age": 3,
-      "gender": "female",
-      "image": "https://cdn.discordapp.com/attachments/569241255201079317/1163597671865520148/IMG_6463.jpeg?ex=654027c7&is=652db2c7&hm=db2d37627f0b1c8f37e3071f00d571281e3628f82ed40e7862989d0b5547fbdd&",
-      "bio": "3",
-      "password": "$2a$10$dH8lDb0koDt0.bUAthJp8.NTgFH/Mw9t52SWTB5Jz.hzlS5jg3Grm",
-      "id": 24
     }
   ],
   "events": [

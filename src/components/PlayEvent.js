@@ -10,7 +10,6 @@ const PlayEvent = ({ title, date, location, description, image, ifr }) => {
         <iframe
           src={ifr}
           title={title}
-          frameBorder="1"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>

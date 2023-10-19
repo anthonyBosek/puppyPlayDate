@@ -18,13 +18,16 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3005/dogs")
-      .then((resp) => resp.json())
-      .then(setDogs)
-      .catch((err) => {
-        handleSnackType("error");
-        setAlertMessage(err.message);
-      });
+    const getData = () => {
+      fetch("http://localhost:3005/dogs")
+        .then((resp) => resp.json())
+        .then(setDogs)
+        .catch((err) => {
+          handleSnackType("error");
+          setAlertMessage(err.message);
+        });
+    };
+    getData();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleAddDog = (newDog) => {

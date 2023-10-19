@@ -72,26 +72,27 @@ const ViewOne = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
-      .then((resp) => {
-        if (resp.ok) {
-          return resp.json();
-        } else {
-          navigate("/");
-        }
-      })
-
-      .then(data => {
-        setDog(data)
-        if(userDog.id === data.id){
-          navigate("/profile")
-        }
-      })
-      .catch((err) => {
-        handleSnackType("error");
-        setAlertMessage(err.message);
-      });
-      
+    const getData = () => {
+      fetch(`http://localhost:3005/dogs/${id || userDog.id}`)
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          } else {
+            navigate("/");
+          }
+        })
+        .then((data) => {
+          setDog(data);
+          if (userDog.id === data.id) {
+            navigate("/profile");
+          }
+        })
+        .catch((err) => {
+          handleSnackType("error");
+          setAlertMessage(err.message);
+        });
+    };
+    getData();
   }, [id, userDog.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const deleteProfile = (dog) => {

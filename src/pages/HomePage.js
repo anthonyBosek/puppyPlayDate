@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
+import { FaPaw } from "react-icons/fa";
 
 const HomePage = () => {
   return (
     <div id="home">
-      <h1>Puppy PlayDate</h1>
+      <h1>
+        Puppy PlayDate
+        <span className="paw-icon">
+          <FaPaw />
+          <FaPaw />
+        </span>
+      </h1>
       <h3 id="home-h3">
         Embark on delightful playdates with fellow dog lovers in your area!
       </h3>

@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router-dom";
+import { FaPaw } from "react-icons/fa";
 import Card from "../components/Card";
 
 const ViewAll = () => {
@@ -17,7 +18,13 @@ const ViewAll = () => {
 
   return (
     <div className="view-all">
-      <h1>Our Play Pack 🐾</h1>
+      <h1>
+        Our Play Pack
+        <span className="paw-icon">
+          <FaPaw />
+          <FaPaw />
+        </span>
+      </h1>
       <div className="all-cards">{allDogs}</div>
     </div>
   );

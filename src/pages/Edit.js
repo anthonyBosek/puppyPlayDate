@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { FaPaw } from "react-icons/fa";
 import Form from "../components/Form";
 
 const Edit = () => {
@@ -34,7 +35,13 @@ const Edit = () => {
 
   return (
     <div>
-      <h1>Edit User Data 🐾</h1>
+      <h1>
+        Edit User Data{" "}
+        <span className="paw-icon">
+          <FaPaw />
+          <FaPaw />
+        </span>
+      </h1>
       <Form selectedDogId={selectDog.id} onEditDog={onEditDog} edit={true} />
     </div>
   );
