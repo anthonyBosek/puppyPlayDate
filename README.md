@@ -34,7 +34,7 @@ An application to arrange social meetings between dogs.
 - Run `json-server --watch db.json`.
 - It should be running on `http://localhost:3000` and your terminal should look something like this:
 - ==============================================
-  ![JSON Server running correctly.](./assets/server-pic.png "JSON Server")
+  ![JSON Server running correctly.](./src/assets/server.png "JSON Server")
 - ==============================================
 - Open another terminal window in the main directory of where this project is located on your computer
 - Run `npm run start`.
