@@ -35,15 +35,15 @@ This single-page application allows users to create a profile for their pooch an
 - Make sure nothing is currently running on `http://localhost:3000`.
 - Open a terminal window in the main directory of where this project is located on your computer.
 - Run `json-server --watch db.json`.
-- It should be running on `http://localhost:3000` and your terminal should look something like this:
+- It should be running on `http://localhost:3005` and your terminal should look something like this:
 - ==============================================
-  ![JSON Server running correctly.](./assets/server-pic.png "JSON Server")
+  ![JSON Server running correctly.](./src/assets/server.png "JSON Server")
 - ==============================================
 - Open another terminal window in the main directory of where this project is located on your computer
 - Run `npm run start`.
 - It should take you to a page that looks like this:
 - ==============================================
-  ![Home page of app.](./assets/index.png "Home Page")
+  ![Home page of app.](./src/assets/screen-lt.png "Home Page")
 - ==============================================
 
 ## Using the Application
@@ -63,7 +63,7 @@ This single-page application allows users to create a profile for their pooch an
 - Application can be used with ease on any size screen! 
 - It should look like this:
 - ==============================================
-  ![Home page of app.](./assets/dark-index.png "Home Page")
+  ![Home page of app.](./src/assets/screen-dk.png "Home Page")
 - ==============================================
 
 ## License
