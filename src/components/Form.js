@@ -37,7 +37,7 @@ const Form = ({ selectedDogId, onEditDog, onAddDog, edit }) => {
   const navigate = useNavigate();
   const { setAlertMessage, handleSnackType } = useOutletContext();
   const [formData, setFormData] = useState(initialValue);
-  let [readyToSubmit, setReadyToSubmit] = useState(false);
+  const [readyToSubmit, setReadyToSubmit] = useState(false);
   useEffect(() => {
     const getFormData = () => {
       if (selectedDogId) {

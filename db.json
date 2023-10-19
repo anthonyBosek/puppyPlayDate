@@ -199,17 +199,6 @@
       "gender": "female",
       "bio": "Lily is a cheerful Bichon Frise who loves meeting new friends and playing in the park. She enjoys yogurt drops as snacks, but isn't a fan of the mailman!",
       "image": "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-    },
-    {
-      "owner": "Kat",
-      "name": "Ollie",
-      "breed": "Cat",
-      "age": 3,
-      "gender": "male",
-      "image": "https://cdn.discordapp.com/attachments/1101217794336501760/1164211443185496094/20230312_193417.jpg?ex=65426366&is=652fee66&hm=8b946076700d9c7a669cc73a44a16f92a71152c626e6e5ef6c432a52fe51fc87&",
-      "bio": "tshymnsthumn",
-      "password": "$2a$10$Xx90jLVpGoUxxD500UvfRuoDSPRI/dtOTf3wArcoN.6PgxI0Yvb.O",
-      "id": 21
     }
   ],
   "events": [
