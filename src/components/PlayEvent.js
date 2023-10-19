@@ -9,9 +9,9 @@ const PlayEvent = ({ title, date, location, description, image, ifr }) => {
         <div className="card-desc">{description}</div>
         <iframe
           src={ifr}
-          frameborder="1"
+          frameBorder="1"
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </div>
