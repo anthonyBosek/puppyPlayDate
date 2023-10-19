@@ -59,7 +59,7 @@ const Login = () => {
 
   return (
     <>
-      <h1>Login</h1>
+      <h1>Puppy Login 🐾</h1>
       <form id="login">
         <label htmlFor="password" className="col-6">
           Password:

@@ -1,5 +1,5 @@
 import Form from "../components/Form";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Add = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Add = () => {
 
   return (
     <div>
-      <h1>Create Play Profile</h1>
+      <h1>Create Play Profile 🐾</h1>
       <Form onAddDog={onAddDog} />
     </div>
   );

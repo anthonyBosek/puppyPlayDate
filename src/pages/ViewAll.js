@@ -17,7 +17,7 @@ const ViewAll = () => {
 
   return (
     <div className="view-all">
-      <h1>Our Play Pack</h1>
+      <h1>Our Play Pack 🐾</h1>
       <div className="all-cards">{allDogs}</div>
     </div>
   );

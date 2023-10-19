@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import TopNav from "./components/TopNav";
 import SideNav from "./components/SideNav";
 import AlertBar from "./components/AlertBar";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [isDark, setIsDark] = useState(localStorage.dark === "true");
@@ -72,6 +73,7 @@ const App = () => {
         <div className="outlet">
           <Outlet context={ctx} />
         </div>
+        <Footer />
       </main>
     </div>
   );

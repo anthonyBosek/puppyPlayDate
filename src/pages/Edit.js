@@ -34,7 +34,7 @@ const Edit = () => {
 
   return (
     <div>
-      <h1>Edit User Data</h1>
+      <h1>Edit User Data 🐾</h1>
       <Form selectedDogId={selectDog.id} onEditDog={onEditDog} edit={true} />
     </div>
   );

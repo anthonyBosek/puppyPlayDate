@@ -18,7 +18,7 @@ const Matches = () => {
       setAlertMessage("You Must Sign Up To Access This Page");
       navigate("/add");
     }
-  }, [userDog.id]);
+  }, [userDog.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return userDog.id ? (
     <div className="view-all">
