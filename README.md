@@ -33,7 +33,7 @@ This single-page application allows users to create a profile for their pooch an
 
 - Fork and clone this repo, and open in your favorite code editor.
 - Run `npm install` or `npm i` to install necessary packages.
-- Make sure nothing is currently running on `http://localhost:3000`.
+- Make sure nothing is currently running on `http://localhost:3005`.
 - Open a terminal window in the main directory of where this project is located on your computer.
 - Run `npm run server`.
 - It should be running on `http://localhost:3005` and your terminal should look something like this:
